@@ -7,7 +7,8 @@ import {
   CheckCircle2, 
   Sparkles, 
   Terminal,
-  Database
+  Database,
+  Bot
 } from 'lucide-react';
 import { skillsData } from '../data/portfolioData';
 
@@ -16,6 +17,7 @@ export const SkillsSection: React.FC = () => {
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
+      case 'Bot': return <Bot className="w-4 h-4 text-amber-400" />;
       case 'Code2': return <Code2 className="w-4 h-4 text-cyan-400" />;
       case 'Layers': return <Layers className="w-4 h-4 text-emerald-400" />;
       case 'Cpu': return <Cpu className="w-4 h-4 text-amber-400" />;

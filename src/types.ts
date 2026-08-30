@@ -37,9 +37,13 @@ export interface Certificate {
   title: string;
   issuer: string;
   date: string;
+  imageUrl?: string;
   credentialUrl?: string;
+  certificateId?: string;
+  duration?: string;
+  signatory?: string;
   skillsCovered: string[];
-  type: 'AI / Emerging Tech' | 'Programming' | 'Hackathon' | 'Leadership';
+  type: 'AI / Emerging Tech' | 'Programming' | 'Hackathon' | 'Leadership' | 'Security & AI';
   badgeColor: string;
 }
 

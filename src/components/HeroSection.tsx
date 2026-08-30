@@ -64,8 +64,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">{personalInfo.name}</span>
               </h1>
-              <p className="text-lg sm:text-xl font-medium text-slate-300">
-                B.Tech Computer Science Engineering Student & Developer
+              <p className="text-lg sm:text-2xl font-bold text-cyan-400 flex items-center gap-2">
+                <span>AI/ML Engineer</span>
+                <span className="text-slate-500 text-sm font-normal">• B.Tech CSE (LPU)</span>
               </p>
             </div>
 
@@ -275,10 +276,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 {/* Certifications */}
                 <div className="p-4 rounded-2xl bg-slate-950/70 border border-slate-800/90 group hover:border-cyan-500/40 transition">
                   <div className="text-2xl font-extrabold text-indigo-400 font-mono">
-                    5+
+                    8
                   </div>
                   <div className="text-xs font-semibold text-slate-200 mt-0.5">Certifications</div>
-                  <div className="text-[10px] text-slate-400">Oracle AI, Infosys & Neo Colab</div>
+                  <div className="text-[10px] text-slate-400">Oracle AI, Infosys, iamneo & Hackathons</div>
                 </div>
               </div>
 

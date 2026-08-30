@@ -84,8 +84,8 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight uppercase">
                     {personalInfo.name}
                   </h1>
-                  <p className="text-xs text-cyan-400 font-medium">
-                    B.Tech Computer Science and Engineering • Lovely Professional University
+                  <p className="text-xs text-cyan-400 font-semibold">
+                    AI/ML Engineer • B.Tech Computer Science and Engineering • Lovely Professional University
                   </p>
                 </div>
               </div>
@@ -132,13 +132,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Section: SKILLS */}
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider border-b border-slate-800 pb-1">
-              Skills
+              Skills & Core Competencies
             </h2>
             <div className="grid grid-cols-1 gap-1.5 pl-2">
-              <div><strong className="text-white">• Languages:</strong> Python, JavaScript, C, C++, SQL</div>
-              <div><strong className="text-white">• Technologies:</strong> HTML, CSS, Object-Oriented Programming (OOP), DBMS</div>
-              <div><strong className="text-white">• Databases/Tools:</strong> MySQL, Arduino IDE, Git, GitHub, VS Code, Microsoft Office</div>
-              <div><strong className="text-white">• Soft Skills:</strong> Problem solving, Team collaboration, Time management, Adaptability, Communication</div>
+              <div><strong className="text-white">• Languages:</strong> Python (Advanced), JavaScript (ES6+), C, C++, SQL</div>
+              <div><strong className="text-white">• Technologies & Systems:</strong> ESP8266 Microcontrollers, IoT Sensors & Actuators, HTML5, CSS3, OOP, DBMS</div>
+              <div><strong className="text-white">• Databases & Toolkits:</strong> MySQL, Arduino IDE, Git, GitHub, VS Code, Cybersecurity Fundamentals</div>
+              <div><strong className="text-white">• Soft Skills & Leadership:</strong> Technical pedagogy, Problem solving, Team coordination, Active communication</div>
             </div>
           </div>
 
@@ -215,27 +215,39 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Section: CERTIFICATES */}
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider border-b border-slate-800 pb-1">
-              Certificates
+              Verified Certifications & Accreditations
             </h2>
-            <div className="pl-2 space-y-1 text-slate-300 text-[11px]">
+            <div className="pl-2 space-y-1.5 text-slate-300 text-[11px]">
               <div className="flex justify-between">
-                <span>• Agentic AI Course Certification — <strong className="text-white">Oracle</strong></span>
+                <span>• Oracle Certified Foundations Associate — Agentic AI (ID: 330695306AAI26OFA) — <strong className="text-white">Oracle University</strong></span>
                 <span className="text-slate-400 font-mono">Aug 2026</span>
               </div>
               <div className="flex justify-between">
-                <span>• Python Programming Certification — <strong className="text-white">Infosys Springboard</strong></span>
+                <span>• Programming Fundamentals using Python (Part 1) — <strong className="text-white">Infosys Springboard</strong></span>
                 <span className="text-slate-400 font-mono">July 2026</span>
               </div>
               <div className="flex justify-between">
-                <span>• Computer Programming Certification — <strong className="text-white">Neo Colab</strong></span>
+                <span>• Programming Fundamentals using Python (Part 2) — <strong className="text-white">Infosys Springboard</strong></span>
+                <span className="text-slate-400 font-mono">July 2026</span>
+              </div>
+              <div className="flex justify-between">
+                <span>• Introduction to Cyber Security — <strong className="text-white">Infosys Springboard</strong></span>
+                <span className="text-slate-400 font-mono">March 2026</span>
+              </div>
+              <div className="flex justify-between">
+                <span>• Computer Programming Certificate of Appreciation (150 Hours, ID: 12CG2CH2Cl2Ce2Df3Bg1) — <strong className="text-white">iamneo & LPU</strong></span>
                 <span className="text-slate-400 font-mono">May 2026</span>
               </div>
               <div className="flex justify-between">
-                <span>• AI Prompt Builder Hackathon — 6-Hour Hackathon — <strong className="text-white">Certificate of Participation</strong></span>
+                <span>• Prompt Builder 2026 Technical Participation (ID: PB26-021) — <strong className="text-white">LYNQUP & School of AI, LPU</strong></span>
                 <span className="text-slate-400 font-mono">Feb 2026</span>
               </div>
               <div className="flex justify-between">
-                <span>• Leadership Attributes Certification — <strong className="text-white">EduTech Hub</strong></span>
+                <span>• Prompt-Builder 2026 — 6-Hour AI Hackathon (ID: IX-202600PB070) — <strong className="text-white">InnovXus & School of CSE, LPU</strong></span>
+                <span className="text-slate-400 font-mono">Feb 2026</span>
+              </div>
+              <div className="flex justify-between">
+                <span>• Leadership Fundamentals (7-Hour Coursework, ID: EDU/10/25/LF-A525) — <strong className="text-white">EduTech Hub</strong></span>
                 <span className="text-slate-400 font-mono">Oct 2025</span>
               </div>
             </div>
@@ -244,14 +256,14 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Section: ACHIEVEMENTS */}
           <div className="space-y-2">
             <h2 className="text-sm font-bold text-cyan-400 uppercase tracking-wider border-b border-slate-800 pb-1">
-              Achievements
+              Achievements & Milestones
             </h2>
             <ul className="list-disc list-inside pl-2 space-y-1 text-slate-300 text-[11px]">
-              <li>Successfully completed a Community Development Project involving Python teaching.</li>
-              <li>Participated in a technical project at LPU in ECE249.</li>
-              <li>Completed Infosys Springboard certification.</li>
-              <li>Gained practical exposure to AI prompting, generative AI, and problem-solving during the hackathon.</li>
-              <li>6-hour AI Prompt Builder Hackathon participation/certificate.</li>
+              <li>Earned official Oracle Certified Foundations Associate credential in Agentic AI (2026).</li>
+              <li>Successfully conducted Community Development Project workshops teaching Python to beginner engineering peers.</li>
+              <li>Completed 150 hours of intensive computer programming through iamneo & LPU.</li>
+              <li>Participated and certified in the 6-Hour AI Prompt Builder Hackathon by LYNQUP & InnovXus.</li>
+              <li>Completed multiple Infosys Springboard enterprise credentials in Python and Cyber Security.</li>
             </ul>
           </div>
 
@@ -266,7 +278,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span className="text-slate-400 font-normal">Phagwara, Punjab</span>
               </div>
               <div className="flex justify-between text-slate-300 italic">
-                <span>Bachelor of Technology - Computer Science and Engineering; <strong className="text-cyan-400 not-italic font-mono">CGPA: 7.47</strong></span>
+                <span>Bachelor of Technology - Computer Science & Engineering (AI & ML Specialization); <strong className="text-cyan-400 not-italic font-mono">CGPA: 7.47</strong></span>
                 <span className="font-mono not-italic text-slate-400">Aug 2025 - Present</span>
               </div>
 

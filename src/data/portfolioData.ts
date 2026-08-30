@@ -1,11 +1,19 @@
 import { Project, SkillCategory, Certificate, EducationItem, AchievementItem, PresentationSlide } from '../types';
 import profilePhoto from '../assets/images/tanuj_profile_official_1788076448498.jpg';
+import certOracleImg from '../assets/images/cert_oracle_ai_1788084112796.jpg';
+import certInfosysPythonP1Img from '../assets/images/cert_infosys_python_p1_1788084673547.jpg';
+import certInfosysPythonP2Img from '../assets/images/cert_infosys_python_p2_1788084693464.jpg';
+import certInfosysCyberImg from '../assets/images/cert_infosys_cyber_1788084161677.jpg';
+import certIamneoProgImg from '../assets/images/cert_iamneo_prog_1788084178872.jpg';
+import certPromptBuilderImg from '../assets/images/cert_prompt_builder_1788084208976.jpg';
+import certInnovxusHackImg from '../assets/images/cert_innovxus_hack_1788084282484.jpg';
+import certEdutechLeadImg from '../assets/images/cert_edutech_lead_1788084228642.jpg';
 
 export const personalInfo = {
   name: "Nakka Tanuj Sekhar",
   photo: profilePhoto,
-  title: "Computer Science Engineering Student & IoT / Web Developer",
-  shortBio: "Passionate B.Tech Computer Science student at Lovely Professional University specializing in embedded IoT systems, responsive web development, and algorithmic problem solving with proven leadership in community Python teaching.",
+  title: "AI/ML Engineer",
+  shortBio: "Passionate AI/ML Engineer and B.Tech Computer Science student at Lovely Professional University specializing in embedded IoT systems, responsive web architecture, and algorithmic problem solving with proven leadership in community Python teaching.",
   email: "tanujsekhar18@gmail.com",
   phone: "+91-9784668230",
   whatsapp: "+919784668230",
@@ -157,10 +165,10 @@ export const skillsData: SkillCategory[] = [
     category: "Programming Languages",
     iconName: "Code2",
     skills: [
-      { name: "Python", level: 90, experience: "Primary language for problem solving, automation, and teaching", appliedIn: "Python CDP, Algorithm practice, Scripting" },
-      { name: "JavaScript (ES6+)", level: 85, experience: "Core web development, interactive DOM manipulation", appliedIn: "Agri Platform Website, Interactive Portals" },
-      { name: "C & C++", level: 80, experience: "Embedded firmware, microcontrollers, memory management", appliedIn: "Smart Helmet ESP8266 firmware, Data Structures" },
-      { name: "SQL", level: 82, experience: "Relational queries, schema design, joins, aggregation", appliedIn: "MySQL database labs, DBMS coursework" }
+      { name: "Python", level: 92, experience: "Primary language for problem solving, automation, scripting, and teaching", appliedIn: "Infosys Certs, Python CDP, Algorithm practice" },
+      { name: "JavaScript (ES6+)", level: 85, experience: "Core web development, interactive DOM manipulation, modern async flow", appliedIn: "Agri Platform Website, Interactive Portals" },
+      { name: "C & C++", level: 85, experience: "150-hour programming foundation, memory management, embedded firmware", appliedIn: "iamneo NIIT Cert, ESP8266 Firmware" },
+      { name: "SQL", level: 82, experience: "Relational queries, schema design, joins, aggregation, data integrity", appliedIn: "MySQL database labs, DBMS coursework" }
     ]
   },
   {
@@ -174,26 +182,25 @@ export const skillsData: SkillCategory[] = [
     ]
   },
   {
-    category: "IoT, Embedded & Tools",
+    category: "IoT, Embedded & Systems",
     iconName: "Cpu",
     skills: [
-      { name: "ESP8266 & Microcontrollers", level: 88, experience: "NodeMCU, GPIO, interrupt routines, Wi-Fi networking", appliedIn: "Smart Helmet Accident Detection" },
+      { name: "ESP8266 & Microcontrollers", level: 88, experience: "NodeMCU, GPIO, interrupt routines, Wi-Fi telemetry", appliedIn: "Smart Helmet Accident Detection" },
       { name: "Sensors & Actuators", level: 85, experience: "Vibration sensors, IR proximity, buzzer systems, ADC", appliedIn: "Smart Helmet, ECE249 Project" },
       { name: "Arduino IDE", level: 86, experience: "Board managers, library integrations, serial debugging", appliedIn: "Hardware prototyping" },
-      { name: "Git & GitHub", level: 88, experience: "Branching, version tracking, open-source repositories", appliedIn: "All project source control" },
-      { name: "VS Code & Dev Tools", level: 92, experience: "Debugging, extensions, linters, workspace optimization", appliedIn: "Primary IDE" },
-      { name: "MySQL Workbench", level: 80, experience: "Query execution, table design, relationship mapping", appliedIn: "Database labs" }
+      { name: "Cybersecurity Fundamentals", level: 84, experience: "Threat vectors, network security, data protection, secure coding", appliedIn: "Infosys Springboard Cybersecurity" },
+      { name: "Git & GitHub", level: 88, experience: "Branching, version tracking, repository management", appliedIn: "All project source control" },
+      { name: "VS Code & Dev Tools", level: 92, experience: "Debugging, extensions, linters, workspace optimization", appliedIn: "Primary development stack" }
     ]
   },
   {
-    category: "Soft Skills & Professional Leadership",
+    category: "Soft Skills & Leadership",
     iconName: "Users",
     skills: [
-      { name: "Problem Solving & Logic", level: 92, experience: "Algorithmic thinking, debugging complex bugs", appliedIn: "Coding challenges, Hackathons" },
-      { name: "Technical Communication", level: 90, experience: "Explaining technical concepts clearly to diverse audiences", appliedIn: "Class presentations, Python teaching" },
-      { name: "Team Collaboration", level: 88, experience: "Cross-functional project coordination and peer code reviews", appliedIn: "University projects, CDP" },
-      { name: "Adaptability & Rapid Learning", level: 92, experience: "Quickly learning new stacks (AI agents, IoT sensors)", appliedIn: "Oracle Agentic AI, Hackathons" },
-      { name: "Time Management", level: 86, experience: "Balancing high academic coursework (97.3%) with project milestones", appliedIn: "Academic & project success" }
+      { name: "Technical Communication & Pedagogy", level: 92, experience: "Explaining technical concepts clearly to diverse audiences", appliedIn: "Python Teaching CDP, Presentations" },
+      { name: "Leadership & Team Coordination", level: 90, experience: "Team motivation, conflict resolution, collaborative milestone tracking", appliedIn: "EduTech Hub Leadership, Project Teams" },
+      { name: "Problem Solving & Logic", level: 94, experience: "Algorithmic thinking, debugging complex systems under tight deadlines", appliedIn: "Coding challenges, Hackathons" },
+      { name: "Adaptability & Rapid Learning", level: 92, experience: "Quickly learning new stacks (IoT sensors, web frameworks)", appliedIn: "University Projects, Hackathons" }
     ]
   }
 ];
@@ -201,48 +208,103 @@ export const skillsData: SkillCategory[] = [
 export const certificatesData: Certificate[] = [
   {
     id: "oracle-agentic-ai",
-    title: "Agentic AI Course Certification",
-    issuer: "Oracle",
-    date: "August 2026",
+    title: "Oracle Certified Foundations Associate — Agentic AI",
+    issuer: "Oracle University",
+    date: "August 17, 2026",
+    certificateId: "330695306AAI26OFA",
+    duration: "Valid until August 17, 2028",
+    signatory: "Gary N Miller (Customer Success Officer, EVP CSS)",
+    imageUrl: certOracleImg,
     type: "AI / Emerging Tech",
     badgeColor: "from-amber-500 to-red-500",
-    skillsCovered: ["Autonomous AI Agents", "Workflow Orchestration", "Prompt Engineering", "Enterprise AI Architecture"],
+    skillsCovered: ["Autonomous AI Agents", "Workflow Orchestration", "Prompt Architecture", "Enterprise AI Solutions"],
   },
   {
-    id: "infosys-python",
-    title: "Python Programming Certification",
+    id: "infosys-python-part1",
+    title: "Programming Fundamentals using Python - Part 1",
     issuer: "Infosys Springboard",
-    date: "July 2026",
+    date: "July 11, 2026",
+    credentialUrl: "https://verify.onwingspan.com",
+    signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
+    imageUrl: certInfosysPythonP1Img,
     type: "Programming",
     badgeColor: "from-blue-600 to-cyan-500",
-    skillsCovered: ["Core Python 3", "Data Structures", "Functional Programming", "Algorithmic Problem Solving"],
+    skillsCovered: ["Python Syntax & Operators", "Control Flow & Loops", "Core Data Types", "Algorithmic Problem Solving"],
   },
   {
-    id: "neo-colab-prog",
-    title: "Computer Programming Certification",
-    issuer: "Neo Colab",
-    date: "May 2026",
+    id: "infosys-python-part2",
+    title: "Programming Fundamentals using Python - Part 2",
+    issuer: "Infosys Springboard",
+    date: "July 18, 2026",
+    credentialUrl: "https://verify.onwingspan.com",
+    signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
+    imageUrl: certInfosysPythonP2Img,
     type: "Programming",
-    badgeColor: "from-emerald-600 to-teal-500",
-    skillsCovered: ["C / C++ Fundamentals", "Control Flow & Memory", "Time & Space Complexity", "Debugging"],
+    badgeColor: "from-blue-600 to-indigo-500",
+    skillsCovered: ["Functions & Recursion", "File I/O & String Processing", "List Comprehensions & Dictionaries", "Modular Code Structure"],
   },
   {
-    id: "ai-prompt-hackathon",
-    title: "AI Prompt Builder Hackathon (6-Hour Challenge)",
-    issuer: "Hackathon Participation & Certificate",
-    date: "February 2026",
+    id: "infosys-cybersecurity",
+    title: "Introduction to Cyber Security",
+    issuer: "Infosys Springboard",
+    date: "March 9, 2026",
+    credentialUrl: "https://verify.onwingspan.com",
+    signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
+    imageUrl: certInfosysCyberImg,
+    type: "Security & AI",
+    badgeColor: "from-emerald-600 to-teal-500",
+    skillsCovered: ["Network & System Security", "Malware Defense & Threat Analysis", "Data Confidentiality & Privacy", "Secure Development Practices"],
+  },
+  {
+    id: "iamneo-computer-programming",
+    title: "Computer Programming Certificate of Appreciation (150 Hours)",
+    issuer: "iamneo (An NIIT Venture) & LPU",
+    date: "May 21, 2026",
+    certificateId: "12CG2CH2Cl2Ce2Df3Bg1",
+    duration: "150 Hours (18-Jan-2026 to 20-May-2026)",
+    signatory: "Senthikumar TP",
+    imageUrl: certIamneoProgImg,
+    type: "Programming",
+    badgeColor: "from-teal-600 to-emerald-500",
+    skillsCovered: ["150 Hours Rigorous Programming", "C / C++ & Data Structures", "Algorithmic Complexity", "Code Optimization & Debugging"],
+  },
+  {
+    id: "lynqup-prompt-builder",
+    title: "Prompt Builder 2026 — Technical Participation Certificate",
+    issuer: "LYNQUP & School of AI and Emerging Technologies (LPU)",
+    date: "February 20, 2026",
+    certificateId: "PB26-021",
+    signatory: "Subham Raj (Authorized Signatory, LYNQUP)",
+    imageUrl: certPromptBuilderImg,
+    type: "AI / Emerging Tech",
+    badgeColor: "from-purple-600 to-indigo-500",
+    skillsCovered: ["Applied AI Concepts", "Structured Prompt Engineering", "Prompt-Based Solution Development", "Emerging AI Industry Practices"],
+  },
+  {
+    id: "innovxus-prompt-hackathon",
+    title: "Prompt-Builder 2026 — 6-Hour AI Hackathon",
+    issuer: "InnovXus & School of CSE (LPU)",
+    date: "March 25, 2026",
+    certificateId: "IX-202600PB070",
+    duration: "6-Hour AI-Based Hackathon (20th-21st Feb 2026)",
+    signatory: "Aryan Raj (CEO, InnovXus) & Manish Kumar Sharma (Faculty Co-ordinator)",
+    imageUrl: certInnovxusHackImg,
     type: "Hackathon",
-    badgeColor: "from-purple-600 to-pink-500",
-    skillsCovered: ["Generative AI", "Structured Prompt Design", "Rapid Prototyping", "Live Pitching"],
+    badgeColor: "from-pink-600 to-rose-500",
+    skillsCovered: ["AI Hackathon Rapid Prototyping", "Generative AI Prompt Design", "Time-Constrained Problem Solving", "Innovation & Pitching"],
   },
   {
     id: "edutech-leadership",
-    title: "Leadership Attributes Certification",
+    title: "Leadership Fundamentals Certificate",
     issuer: "EduTech Hub",
-    date: "October 2025",
+    date: "October 29, 2025",
+    certificateId: "EDU/10/25/LF-A525",
+    duration: "7 Hours of Coursework",
+    credentialUrl: "https://edutechhub.in",
+    imageUrl: certEdutechLeadImg,
     type: "Leadership",
     badgeColor: "from-indigo-600 to-violet-500",
-    skillsCovered: ["Team Leadership", "Active Listening", "Conflict Resolution", "Strategic Planning"],
+    skillsCovered: ["Leadership Fundamentals", "Team Dynamics", "Active Communication", "Collaborative Problem Solving"],
   }
 ];
 
@@ -250,7 +312,7 @@ export const educationData: EducationItem[] = [
   {
     id: "lpu-btech",
     degree: "Bachelor of Technology (B.Tech)",
-    field: "Computer Science and Engineering",
+    field: "Computer Science and Engineering (Specialization: AI & Machine Learning)",
     institution: "Lovely Professional University (LPU)",
     location: "Phagwara, Punjab, India",
     duration: "August 2025 – Present",
@@ -258,10 +320,10 @@ export const educationData: EducationItem[] = [
     scoreLabel: "Current CGPA",
     isHighlight: false,
     courseworkOrFocus: [
+      "Artificial Intelligence & Machine Learning Specialization",
       "Data Structures & Algorithms",
-      "Object-Oriented Programming (C++/Python)",
+      "Object-Oriented Programming (C++ & Python)",
       "Database Management Systems (DBMS & SQL)",
-      "Computer Organization & Architecture",
       "Community Development Project (Python Teaching)"
     ]
   },
@@ -300,32 +362,39 @@ export const educationData: EducationItem[] = [
 
 export const achievementsData: AchievementItem[] = [
   {
-    id: "cdp-leadership",
-    title: "Community Development Project (CDP) Completion",
-    category: "Mentorship & Social Impact",
-    description: "Successfully organized and delivered hands-on Python programming classes for university peers and junior learners.",
-    date: "July 2026"
+    id: "oracle-agentic-cert",
+    title: "Oracle Certified Foundations Associate (Agentic AI)",
+    category: "AI & Emerging Tech Credential",
+    description: "Officially certified by Oracle in Agentic AI foundations, autonomous agent workflows, and enterprise intelligence architecture.",
+    date: "August 2026"
   },
   {
-    id: "ece249-project",
-    title: "Technical Project Participation at LPU (ECE249)",
-    category: "Hardware & IoT Innovation",
-    description: "Built and demonstrated hardware sensor integration projects under university engineering coursework.",
+    id: "prompt-builder-hackathon",
+    title: "Prompt Builder 2026 AI Hackathon & Technical Participation",
+    category: "AI Hackathon & Innovation",
+    description: "Awarded technical participation and hackathon certificates by LYNQUP, InnovXus, and LPU School of AI for applied AI prompt engineering.",
+    date: "February 2026"
+  },
+  {
+    id: "iamneo-150hr-programming",
+    title: "150-Hour Computer Programming Coursework Award",
+    category: "Coding & Algorithms",
+    description: "Completed 150 hours of intensive computer programming and problem-solving through iamneo (NIIT Venture) & LPU.",
+    date: "May 2026"
+  },
+  {
+    id: "infosys-python-suite",
+    title: "Infosys Springboard Python & Cybersecurity Certifications",
+    category: "Enterprise Credentials",
+    description: "Earned multi-module certifications across Python Programming (Parts 1 & 2) and Cybersecurity fundamentals.",
     date: "2026"
   },
   {
-    id: "infosys-springboard",
-    title: "Infosys Springboard Python Certification",
-    category: "Professional Credential",
-    description: "Mastered enterprise-grade Python programming standards and problem-solving benchmarks.",
+    id: "cdp-leadership",
+    title: "Community Development Project (CDP) Python Teaching",
+    category: "Mentorship & Social Impact",
+    description: "Successfully organized and delivered hands-on Python programming workshops for university peers and beginner coders.",
     date: "July 2026"
-  },
-  {
-    id: "hackathon-ai",
-    title: "6-Hour AI Prompt Builder Hackathon Finalist",
-    category: "Competitive Hackathon",
-    description: "Demonstrated real-time problem-solving, structured prompt synthesis, and generative AI utilization under tight time limits.",
-    date: "February 2026"
   },
   {
     id: "academic-excellence",
@@ -340,14 +409,14 @@ export const presentationSlides: PresentationSlide[] = [
   {
     id: "intro",
     title: "Nakka Tanuj Sekhar",
-    subtitle: "Computer Science Engineering Portfolio & Technical Walkthrough",
+    subtitle: "AI/ML Engineer • Technical Project & Skills Walkthrough",
     section: "1. Profile Overview",
-    speakerNotes: "Good morning/afternoon professors and fellow classmates. My name is Nakka Tanuj Sekhar, a Computer Science Engineering student at Lovely Professional University. Today, I am thrilled to present my core engineering projects, technical skill matrix, and interactive live simulations.",
+    speakerNotes: "Good morning/afternoon professors and fellow classmates. My name is Nakka Tanuj Sekhar, an AI/ML Engineer and Computer Science Engineering student at Lovely Professional University. Today, I am thrilled to present my core engineering projects, technical skill matrix, and interactive live simulations.",
     bulletPoints: [
-      "B.Tech CSE Student at Lovely Professional University (Current CGPA: 7.47)",
+      "AI/ML Engineer & B.Tech CSE Student at Lovely Professional University (Current CGPA: 7.47)",
       "High Academic Distinction: 97.3% in Higher Secondary (Narayana Junior College)",
-      "Core Specializations: IoT Embedded Systems, Responsive Web Architecture, and Python Pedagogy",
-      "Certified in Oracle Agentic AI, Infosys Springboard Python, and Neo Colab Programming"
+      "Core Competencies: Embedded IoT Systems, Responsive Web Architecture, and Python Pedagogy",
+      "8 Verified Credentials including Oracle Agentic AI, Infosys Python (Parts 1 & 2), Cybersecurity, and iamneo 150h Programming"
     ],
     actionLabel: "View Full Resume Summary",
     actionTarget: "#resume"
@@ -419,25 +488,26 @@ export const presentationSlides: PresentationSlide[] = [
     section: "5. Technical Competencies",
     speakerNotes: "This matrix represents my technical toolkit. I have strong foundations in Python and JavaScript for application logic, C/C++ for hardware and algorithms, and MySQL for relational data modeling, supported by modern version control with Git and GitHub.",
     bulletPoints: [
-      "Languages: Python, JavaScript (ES6+), C, C++, SQL",
+      "Languages: Python (Advanced), JavaScript (ES6+), C, C++, SQL",
       "Web & Architecture: HTML5 Semantic, CSS3 Responsive, Object-Oriented Programming (OOP), DBMS",
-      "IoT & Hardware: ESP8266 NodeMCU, Vibration Sensors, IR Proximity, Arduino IDE",
-      "Tools: Git, GitHub, MySQL Workbench, VS Code, Microsoft Office Suite"
+      "IoT & Systems: ESP8266 NodeMCU, Vibration Sensors, IR Proximity, Arduino IDE, Cybersecurity",
+      "Tools: Git, GitHub, MySQL Workbench, VS Code"
     ],
     actionLabel: "Explore Interactive Skills Matrix",
     actionTarget: "#skills"
   },
   {
     id: "certs-education-slide",
-    title: "Certifications, Achievements & Education",
-    subtitle: "Oracle Agentic AI, Infosys Springboard, Narayana 97.3%, and LPU CSE",
+    title: "8+ Verified Certifications & Academic Journey",
+    subtitle: "Oracle Agentic AI, Infosys Springboard Suite, iamneo 150h, Narayana 97.3%, and LPU CSE (AI/ML)",
     section: "6. Credentials & Academic Journey",
-    speakerNotes: "To continually sharpen my engineering skills, I have completed industry-standard certifications including Oracle's Agentic AI Course, Infosys Springboard Python, and Neo Colab Programming, while maintaining a strong academic record with 97.3% in my 12th board exams.",
+    speakerNotes: "To continually sharpen my engineering skills, I have earned 8 verified certifications spanning Oracle Agentic AI, Infosys Python (Parts 1 & 2), Cybersecurity, iamneo 150-hour programming, and AI hackathons, while maintaining an academic record of 97.3% distinction.",
     bulletPoints: [
-      "Certifications: Oracle Agentic AI (Aug 2026), Infosys Springboard Python (July 2026), Neo Colab (May 2026)",
-      "Hackathons: 6-Hour AI Prompt Builder Hackathon Certificate of Participation (Feb 2026)",
-      "Education: B.Tech CSE at LPU (7.47 CGPA) | Narayana Junior College (97.3% Distinction)",
-      "Leadership: EduTech Hub Leadership Attributes Certification"
+      "Oracle University: Agentic AI Certified Foundations Associate (Aug 2026)",
+      "Infosys Springboard: Python Programming (Parts 1 & 2) and Cyber Security (2026)",
+      "iamneo (NIIT Venture): 150-Hour Computer Programming Certification (May 2026)",
+      "AI Hackathons: Prompt Builder 2026 (LYNQUP & InnovXus / School of AI)",
+      "Education: B.Tech CSE (AI/ML Specialization) at LPU (7.47 CGPA) | Narayana Junior College (97.3% Distinction)"
     ],
     actionLabel: "View Certificates & Timeline",
     actionTarget: "#certificates"
@@ -447,9 +517,9 @@ export const presentationSlides: PresentationSlide[] = [
     title: "Summary & Open for Questions",
     subtitle: "Thank You for Your Time & Attention",
     section: "7. Q&A and Collaboration",
-    speakerNotes: "In summary, my engineering philosophy centers on solving real-world problems through practical technology—whether that is saving lives with IoT safety systems, assisting farmers through clean web portals, or teaching foundational code. I am now happy to take any questions or demonstrate the live project simulators!",
+    speakerNotes: "In summary, my engineering philosophy centers on applying AI, ML, and embedded systems to solve real-world problems. I am now happy to take any questions or demonstrate the live project simulators!",
     bulletPoints: [
-      "Available for internship, collaboration, and technical projects.",
+      "Available for AI/ML engineering, internships, and technical collaboration.",
       "Email: tanujsekhar18@gmail.com | Phone: +91-9784668230",
       "LinkedIn: linkedin.com/in/tanuj-sekhar-nakka-61608037a",
       "GitHub: github.com/tanujsekhar1830"
