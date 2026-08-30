@@ -1,19 +1,11 @@
 import { Project, SkillCategory, Certificate, EducationItem, AchievementItem, PresentationSlide } from '../types';
 import profilePhoto from '../assets/images/tanuj_profile_official_1788076448498.jpg';
-import certOracleImg from '../assets/images/cert_oracle_ai_1788084112796.jpg';
-import certInfosysPythonP1Img from '../assets/images/cert_infosys_python_p1_1788084673547.jpg';
-import certInfosysPythonP2Img from '../assets/images/cert_infosys_python_p2_1788084693464.jpg';
-import certInfosysCyberImg from '../assets/images/cert_infosys_cyber_1788084161677.jpg';
-import certIamneoProgImg from '../assets/images/cert_iamneo_prog_1788084178872.jpg';
-import certPromptBuilderImg from '../assets/images/cert_prompt_builder_1788084208976.jpg';
-import certInnovxusHackImg from '../assets/images/cert_innovxus_hack_1788084282484.jpg';
-import certEdutechLeadImg from '../assets/images/cert_edutech_lead_1788084228642.jpg';
 
 export const personalInfo = {
   name: "Nakka Tanuj Sekhar",
   photo: profilePhoto,
-  title: "AI/ML Engineer",
-  shortBio: "Passionate AI/ML Engineer and B.Tech Computer Science student at Lovely Professional University specializing in embedded IoT systems, responsive web architecture, and algorithmic problem solving with proven leadership in community Python teaching.",
+  title: "B.Tech CSE • AI & ML Specialization",
+  shortBio: "B.Tech Computer Science and Engineering (CSE) student at Lovely Professional University with a dedicated specialization in Artificial Intelligence & Machine Learning (AI/ML). Passionate about embedded IoT hardware systems, modern full-stack web platforms, and applied machine learning with proven leadership in peer Python education.",
   email: "tanujsekhar18@gmail.com",
   phone: "+91-9784668230",
   whatsapp: "+919784668230",
@@ -22,7 +14,7 @@ export const personalInfo = {
   github: "https://github.com/tanujsekhar1830",
   cgpa: "7.47 CGPA",
   highestSchoolScore: "97.3% (12th Boards)",
-  status: "Undergraduate (B.Tech CSE - LPU)",
+  status: "B.Tech CSE (AI/ML Specialization) • LPU",
 };
 
 export const projectsData: Project[] = [
@@ -214,7 +206,6 @@ export const certificatesData: Certificate[] = [
     certificateId: "330695306AAI26OFA",
     duration: "Valid until August 17, 2028",
     signatory: "Gary N Miller (Customer Success Officer, EVP CSS)",
-    imageUrl: certOracleImg,
     type: "AI / Emerging Tech",
     badgeColor: "from-amber-500 to-red-500",
     skillsCovered: ["Autonomous AI Agents", "Workflow Orchestration", "Prompt Architecture", "Enterprise AI Solutions"],
@@ -226,7 +217,6 @@ export const certificatesData: Certificate[] = [
     date: "July 11, 2026",
     credentialUrl: "https://verify.onwingspan.com",
     signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
-    imageUrl: certInfosysPythonP1Img,
     type: "Programming",
     badgeColor: "from-blue-600 to-cyan-500",
     skillsCovered: ["Python Syntax & Operators", "Control Flow & Loops", "Core Data Types", "Algorithmic Problem Solving"],
@@ -238,7 +228,6 @@ export const certificatesData: Certificate[] = [
     date: "July 18, 2026",
     credentialUrl: "https://verify.onwingspan.com",
     signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
-    imageUrl: certInfosysPythonP2Img,
     type: "Programming",
     badgeColor: "from-blue-600 to-indigo-500",
     skillsCovered: ["Functions & Recursion", "File I/O & String Processing", "List Comprehensions & Dictionaries", "Modular Code Structure"],
@@ -250,7 +239,6 @@ export const certificatesData: Certificate[] = [
     date: "March 9, 2026",
     credentialUrl: "https://verify.onwingspan.com",
     signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
-    imageUrl: certInfosysCyberImg,
     type: "Security & AI",
     badgeColor: "from-emerald-600 to-teal-500",
     skillsCovered: ["Network & System Security", "Malware Defense & Threat Analysis", "Data Confidentiality & Privacy", "Secure Development Practices"],
@@ -263,7 +251,6 @@ export const certificatesData: Certificate[] = [
     certificateId: "12CG2CH2Cl2Ce2Df3Bg1",
     duration: "150 Hours (18-Jan-2026 to 20-May-2026)",
     signatory: "Senthikumar TP",
-    imageUrl: certIamneoProgImg,
     type: "Programming",
     badgeColor: "from-teal-600 to-emerald-500",
     skillsCovered: ["150 Hours Rigorous Programming", "C / C++ & Data Structures", "Algorithmic Complexity", "Code Optimization & Debugging"],
@@ -275,7 +262,6 @@ export const certificatesData: Certificate[] = [
     date: "February 20, 2026",
     certificateId: "PB26-021",
     signatory: "Subham Raj (Authorized Signatory, LYNQUP)",
-    imageUrl: certPromptBuilderImg,
     type: "AI / Emerging Tech",
     badgeColor: "from-purple-600 to-indigo-500",
     skillsCovered: ["Applied AI Concepts", "Structured Prompt Engineering", "Prompt-Based Solution Development", "Emerging AI Industry Practices"],
@@ -288,7 +274,6 @@ export const certificatesData: Certificate[] = [
     certificateId: "IX-202600PB070",
     duration: "6-Hour AI-Based Hackathon (20th-21st Feb 2026)",
     signatory: "Aryan Raj (CEO, InnovXus) & Manish Kumar Sharma (Faculty Co-ordinator)",
-    imageUrl: certInnovxusHackImg,
     type: "Hackathon",
     badgeColor: "from-pink-600 to-rose-500",
     skillsCovered: ["AI Hackathon Rapid Prototyping", "Generative AI Prompt Design", "Time-Constrained Problem Solving", "Innovation & Pitching"],
@@ -301,7 +286,6 @@ export const certificatesData: Certificate[] = [
     certificateId: "EDU/10/25/LF-A525",
     duration: "7 Hours of Coursework",
     credentialUrl: "https://edutechhub.in",
-    imageUrl: certEdutechLeadImg,
     type: "Leadership",
     badgeColor: "from-indigo-600 to-violet-500",
     skillsCovered: ["Leadership Fundamentals", "Team Dynamics", "Active Communication", "Collaborative Problem Solving"],
@@ -409,13 +393,14 @@ export const presentationSlides: PresentationSlide[] = [
   {
     id: "intro",
     title: "Nakka Tanuj Sekhar",
-    subtitle: "AI/ML Engineer • Technical Project & Skills Walkthrough",
+    subtitle: "B.Tech CSE (AI/ML Specialization) • Technical Project & Skills Walkthrough",
     section: "1. Profile Overview",
-    speakerNotes: "Good morning/afternoon professors and fellow classmates. My name is Nakka Tanuj Sekhar, an AI/ML Engineer and Computer Science Engineering student at Lovely Professional University. Today, I am thrilled to present my core engineering projects, technical skill matrix, and interactive live simulations.",
+    speakerNotes: "Good morning/afternoon professors and fellow classmates. My name is Nakka Tanuj Sekhar, a Computer Science & Engineering (CSE) student with an Artificial Intelligence & Machine Learning (AI/ML) specialization at Lovely Professional University. Today, I am thrilled to present my core engineering projects, technical skill matrix, and interactive live simulations.",
     bulletPoints: [
-      "AI/ML Engineer & B.Tech CSE Student at Lovely Professional University (Current CGPA: 7.47)",
-      "High Academic Distinction: 97.3% in Higher Secondary (Narayana Junior College)",
-      "Core Competencies: Embedded IoT Systems, Responsive Web Architecture, and Python Pedagogy",
+      "Main Branch: Computer Science & Engineering (B.Tech CSE)",
+      "Specialization: Artificial Intelligence & Machine Learning (AI/ML)",
+      "Academic Standing: Lovely Professional University (CGPA: 7.47) & 97.3% 12th Board Distinction",
+      "Core Competencies: Embedded IoT Systems, Responsive Web Architecture, AI/ML foundations, and Python Pedagogy",
       "8 Verified Credentials including Oracle Agentic AI, Infosys Python (Parts 1 & 2), Cybersecurity, and iamneo 150h Programming"
     ],
     actionLabel: "View Full Resume Summary",

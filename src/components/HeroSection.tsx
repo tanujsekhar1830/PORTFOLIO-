@@ -60,19 +60,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Main Name & Title */}
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">{personalInfo.name}</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-bold text-cyan-400 flex items-center gap-2">
-                <span>AI/ML Engineer</span>
-                <span className="text-slate-500 text-sm font-normal">• B.Tech CSE (LPU)</span>
-              </p>
+              
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <div className="px-3 py-1 rounded-xl bg-cyan-950/80 border border-cyan-500/40 text-sm sm:text-base font-bold text-cyan-300 flex items-center gap-2 shadow-sm">
+                  <GraduationCap className="w-4 h-4 text-cyan-400" />
+                  <span>B.Tech Computer Science & Engineering</span>
+                </div>
+                <div className="px-3 py-1 rounded-xl bg-indigo-950/80 border border-indigo-500/40 text-sm sm:text-base font-bold text-indigo-300 flex items-center gap-2 shadow-sm">
+                  <Sparkles className="w-4 h-4 text-indigo-400" />
+                  <span>AI/ML Specialization</span>
+                </div>
+                <span className="text-slate-500 text-xs sm:text-sm font-medium">Lovely Professional University</span>
+              </div>
             </div>
 
             {/* Short Bio */}
             <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl">
-              Engineering practical, human-centered technology spanning <strong className="text-slate-200">IoT embedded crash detection</strong>, <strong className="text-slate-200">accessible agricultural web platforms</strong>, and <strong className="text-slate-200">foundational Python education</strong> at Lovely Professional University.
+              Undergraduate in <strong className="text-cyan-300">Computer Science and Engineering (CSE)</strong> with a focused specialization in <strong className="text-indigo-300">Artificial Intelligence & Machine Learning (AI/ML)</strong> at Lovely Professional University. Engineering practical, human-centered technology spanning <strong className="text-slate-200">IoT embedded crash detection</strong>, <strong className="text-slate-200">accessible agricultural platforms</strong>, and <strong className="text-slate-200">foundational Python education</strong>.
             </p>
 
             {/* Call to Action Buttons */}
@@ -182,7 +190,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-[11px] font-semibold text-cyan-300 font-mono">
                       <GraduationCap className="w-3 h-3 text-cyan-400" />
-                      <span>B.Tech CSE • LPU (2025-29)</span>
+                      <span>B.Tech CSE (AI/ML) • LPU</span>
                     </div>
 
                     {isCustom && (

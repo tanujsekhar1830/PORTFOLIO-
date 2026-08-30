@@ -85,7 +85,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     {personalInfo.name}
                   </h1>
                   <p className="text-xs text-cyan-400 font-semibold">
-                    AI/ML Engineer • B.Tech Computer Science and Engineering • Lovely Professional University
+                    B.Tech Computer Science and Engineering (Specialization: AI & Machine Learning) • Lovely Professional University
                   </p>
                 </div>
               </div>
