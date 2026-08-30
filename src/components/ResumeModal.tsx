@@ -250,6 +250,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <span>• Leadership Fundamentals (7-Hour Coursework, ID: EDU/10/25/LF-A525) — <strong className="text-white">EduTech Hub</strong></span>
                 <span className="text-slate-400 font-mono">Oct 2025</span>
               </div>
+              <div className="pt-1 text-[11px] text-cyan-400 flex items-center gap-1.5">
+                <span>📁 Certificate Drive Repository:</span>
+                <a
+                  href={personalInfo.certificatesDriveUrl || "https://drive.google.com/drive/u/0/my-drive"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:text-cyan-300 font-mono text-[10px]"
+                >
+                  drive.google.com/drive/u/0/my-drive
+                </a>
+              </div>
             </div>
           </div>
 

@@ -15,6 +15,7 @@ export const personalInfo = {
   cgpa: "7.47 CGPA",
   highestSchoolScore: "97.3% (12th Boards)",
   status: "B.Tech CSE (AI/ML Specialization) • LPU",
+  certificatesDriveUrl: "https://drive.google.com/drive/u/0/my-drive",
 };
 
 export const projectsData: Project[] = [
