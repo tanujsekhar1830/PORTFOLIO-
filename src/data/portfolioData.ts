@@ -1,7 +1,9 @@
 import { Project, SkillCategory, Certificate, EducationItem, AchievementItem, PresentationSlide } from '../types';
+import profilePhoto from '../assets/images/tanuj_profile_official_1788076448498.jpg';
 
 export const personalInfo = {
   name: "Nakka Tanuj Sekhar",
+  photo: profilePhoto,
   title: "Computer Science Engineering Student & IoT / Web Developer",
   shortBio: "Passionate B.Tech Computer Science student at Lovely Professional University specializing in embedded IoT systems, responsive web development, and algorithmic problem solving with proven leadership in community Python teaching.",
   email: "tanujsekhar18@gmail.com",
