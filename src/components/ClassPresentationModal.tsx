@@ -19,7 +19,6 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { presentationSlides, personalInfo } from '../data/portfolioData';
-import { useProfilePhoto } from '../context/ProfileContext';
 import confetti from 'canvas-confetti';
 
 interface ClassPresentationModalProps {
@@ -33,7 +32,6 @@ export const ClassPresentationModal: React.FC<ClassPresentationModalProps> = ({
   onClose,
   onJumpToSimulator
 }) => {
-  const { photoUrl } = useProfilePhoto();
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
   const [showSpeakerNotes, setShowSpeakerNotes] = useState<boolean>(true);
   const [elapsedSeconds, setElapsedSeconds] = useState<number>(0);
@@ -208,27 +206,14 @@ export const ClassPresentationModal: React.FC<ClassPresentationModalProps> = ({
             </div>
           </div>
 
-          {/* Slide Main Heading with Photo on Intro / Conclusion */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8">
-            <div>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-2 tracking-tight leading-tight">
-                {currentSlide.title}
-              </h2>
-              <p className="text-sm md:text-base text-slate-400 max-w-2xl">
-                {currentSlide.subtitle}
-              </p>
-            </div>
-
-            {(currentSlide.id === 'intro' || currentSlide.id === 'conclusion-qa') && (
-              <div className="w-20 h-24 sm:w-24 sm:h-28 rounded-2xl overflow-hidden border-2 border-cyan-500/50 shadow-xl shrink-0 bg-slate-950">
-                <img
-                  src={photoUrl}
-                  alt={personalInfo.name}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-            )}
+          {/* Slide Main Heading */}
+          <div className="mb-8">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-2 tracking-tight leading-tight">
+              {currentSlide.title}
+            </h2>
+            <p className="text-sm md:text-base text-slate-400 max-w-2xl">
+              {currentSlide.subtitle}
+            </p>
           </div>
 
           {/* Slide Bullet Points */}

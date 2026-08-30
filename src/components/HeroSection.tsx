@@ -15,7 +15,6 @@ import {
   Sprout
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
-import { useProfilePhoto } from '../context/ProfileContext';
 
 interface HeroSectionProps {
   onOpenPresentation: () => void;
@@ -28,7 +27,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenResume,
   onJumpToSimulator
 }) => {
-  const { photoUrl } = useProfilePhoto();
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background Decorative Gradients */}
@@ -132,47 +130,38 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Profile Photo Card & Academic Highlight Bento */}
+          {/* Right Column: Profile Identity Card & Academic Highlight Bento */}
           <div className="lg:col-span-5 space-y-4">
-            {/* Profile Photo Card */}
-            <div className="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 rounded-3xl p-5 shadow-2xl backdrop-blur-sm relative overflow-hidden group transition">
-              <div className="flex flex-col sm:flex-row items-center gap-5">
-                {/* Full Aspect Ratio Photo Container */}
-                <div className="relative shrink-0 w-36 sm:w-40 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-cyan-500/50 shadow-xl shadow-cyan-500/10 group-hover:scale-[1.02] transition-all duration-300 bg-slate-950">
-                  <img
-                    src={photoUrl}
-                    alt={personalInfo.name}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  {/* Active Online Indicator */}
-                  <span className="absolute bottom-2 right-2 flex h-4 w-4 z-10">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-slate-900"></span>
-                  </span>
+            {/* Profile Identity Card */}
+            <div className="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 rounded-3xl p-6 shadow-2xl backdrop-blur-sm relative overflow-hidden group transition">
+              <div className="flex items-center gap-4">
+                {/* Monogram / Tech Emblem */}
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-indigo-600/20 border border-cyan-500/40 flex flex-col items-center justify-center text-cyan-400 font-bold font-mono shadow-lg shadow-cyan-500/10 shrink-0">
+                  <span className="text-xl tracking-tighter">TS</span>
+                  <span className="text-[9px] uppercase font-sans text-cyan-300 font-semibold tracking-widest">AI/ML</span>
                 </div>
 
                 {/* Profile Identity & Tag */}
-                <div className="space-y-2.5 text-center sm:text-left flex-1">
-                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <div className="space-y-1.5 flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-[11px] font-semibold text-cyan-300 font-mono">
                       <GraduationCap className="w-3 h-3 text-cyan-400" />
                       <span>B.Tech CSE (AI/ML) • LPU</span>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">
+                    <h3 className="text-xl font-bold text-white tracking-tight truncate">
                       {personalInfo.name}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-0.5">
+                    <p className="text-xs text-slate-400 truncate">
                       IoT Embedded Systems • Web Engineering • Python Teaching
                     </p>
                   </div>
-                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-[11px] text-slate-400 font-mono">
-                    <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 font-semibold">
+                  <div className="flex flex-wrap items-center gap-2 pt-0.5 text-[11px] text-slate-400 font-mono">
+                    <span className="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-300 font-semibold">
                       CGPA: {personalInfo.cgpa}
                     </span>
-                    <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-amber-300 font-semibold">
+                    <span className="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-amber-300 font-semibold">
                       12th: 97.3%
                     </span>
                   </div>

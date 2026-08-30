@@ -9,14 +9,12 @@ import {
   Heart 
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
-import { useProfilePhoto } from '../context/ProfileContext';
 
 interface FooterProps {
   onOpenPresentation: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenPresentation }) => {
-  const { photoUrl } = useProfilePhoto();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -28,13 +26,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPresentation }) => {
           {/* Brand & Tagline */}
           <div className="space-y-1 text-center md:text-left">
             <div className="text-base font-bold text-white tracking-tight flex items-center justify-center md:justify-start gap-2.5">
-              <div className="w-7 h-7 rounded-lg overflow-hidden border border-cyan-500/40 shadow-sm bg-slate-900">
-                <img
-                  src={photoUrl}
-                  alt={personalInfo.name}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-center"
-                />
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/40 shadow-sm flex items-center justify-center text-cyan-400 font-bold text-xs font-mono">
+                TS
               </div>
               <span>{personalInfo.name}</span>
             </div>
