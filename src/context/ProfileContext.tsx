@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import defaultPhoto from '../assets/images/tanuj_profile_official_1788076448498.jpg';
+import defaultPhoto from '../assets/images/tanuj_profile_exact_1788089149242.jpg';
 
 interface ProfilePhotoContextType {
   photoUrl: string;
-  setCustomPhoto: (file: File | string) => void;
+  setCustomPhoto: (fileOrUrl: File | string) => void;
   resetPhoto: () => void;
   isCustom: boolean;
 }
@@ -20,11 +20,14 @@ export const ProfilePhotoProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const [isCustom, setIsCustom] = useState<boolean>(false);
 
   useEffect(() => {
-    // Check if user has saved a custom original image in localStorage
-    const saved = localStorage.getItem('tanuj_portfolio_custom_photo');
-    if (saved) {
-      setPhotoUrl(saved);
-      setIsCustom(true);
+    try {
+      const saved = localStorage.getItem('tanuj_portfolio_profile_photo');
+      if (saved) {
+        setPhotoUrl(saved);
+        setIsCustom(true);
+      }
+    } catch {
+      // Ignore localStorage errors
     }
   }, []);
 
@@ -33,9 +36,9 @@ export const ProfilePhotoProvider: React.FC<{ children: React.ReactNode }> = ({ 
       setPhotoUrl(fileOrUrl);
       setIsCustom(true);
       try {
-        localStorage.setItem('tanuj_portfolio_custom_photo', fileOrUrl);
-      } catch (e) {
-        console.warn('Storage full, keeping in memory', e);
+        localStorage.setItem('tanuj_portfolio_profile_photo', fileOrUrl);
+      } catch (err) {
+        console.warn('Storage limit reached, cached in memory', err);
       }
     } else {
       const reader = new FileReader();
@@ -45,9 +48,9 @@ export const ProfilePhotoProvider: React.FC<{ children: React.ReactNode }> = ({ 
           setPhotoUrl(result);
           setIsCustom(true);
           try {
-            localStorage.setItem('tanuj_portfolio_custom_photo', result);
+            localStorage.setItem('tanuj_portfolio_profile_photo', result);
           } catch (err) {
-            console.warn('Storage limit reached, photo active in memory session', err);
+            console.warn('Storage limit reached, cached in memory', err);
           }
         }
       };
@@ -56,7 +59,11 @@ export const ProfilePhotoProvider: React.FC<{ children: React.ReactNode }> = ({ 
   };
 
   const resetPhoto = () => {
-    localStorage.removeItem('tanuj_portfolio_custom_photo');
+    try {
+      localStorage.removeItem('tanuj_portfolio_profile_photo');
+    } catch {
+      // Ignore error
+    }
     setPhotoUrl(defaultPhoto);
     setIsCustom(false);
   };
@@ -69,3 +76,4 @@ export const ProfilePhotoProvider: React.FC<{ children: React.ReactNode }> = ({ 
 };
 
 export const useProfilePhoto = () => useContext(ProfilePhotoContext);
+

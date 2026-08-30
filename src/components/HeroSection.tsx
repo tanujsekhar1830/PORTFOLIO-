@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { 
   Tv, 
   Cpu, 
@@ -12,10 +12,7 @@ import {
   CheckCircle2, 
   GraduationCap, 
   Award,
-  Sprout,
-  Camera,
-  RotateCcw,
-  Upload
+  Sprout
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { useProfilePhoto } from '../context/ProfileContext';
@@ -31,18 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenResume,
   onJumpToSimulator
 }) => {
-  const { photoUrl, setCustomPhoto, resetPhoto, isCustom } = useProfilePhoto();
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setCustomPhoto(e.target.files[0]);
-    }
-  };
-
-  const handleUploadClick = () => {
-    fileInputRef.current?.click();
-  };
+  const { photoUrl } = useProfilePhoto();
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background Decorative Gradients */}
@@ -148,17 +134,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Right Column: Profile Photo Card & Academic Highlight Bento */}
           <div className="lg:col-span-5 space-y-4">
-            {/* Hidden Input for direct file selection */}
-            <input
-              type="file"
-              ref={fileInputRef}
-              onChange={handleFileChange}
-              accept="image/*"
-              className="hidden"
-            />
-
-            {/* Profile Photo Card - Displaying Full Photo As-Is */}
-            <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-5 shadow-2xl backdrop-blur-sm relative overflow-hidden group hover:border-cyan-500/40 transition">
+            {/* Profile Photo Card */}
+            <div className="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 rounded-3xl p-5 shadow-2xl backdrop-blur-sm relative overflow-hidden group transition">
               <div className="flex flex-col sm:flex-row items-center gap-5">
                 {/* Full Aspect Ratio Photo Container */}
                 <div className="relative shrink-0 w-36 sm:w-40 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-cyan-500/50 shadow-xl shadow-cyan-500/10 group-hover:scale-[1.02] transition-all duration-300 bg-slate-950">
@@ -169,20 +146,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     className="w-full h-full object-cover object-center"
                   />
                   {/* Active Online Indicator */}
-                  <span className="absolute bottom-2 right-2 flex h-4 w-4">
+                  <span className="absolute bottom-2 right-2 flex h-4 w-4 z-10">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-slate-900"></span>
                   </span>
-
-                  {/* Quick Upload Hover Overlay */}
-                  <button
-                    onClick={handleUploadClick}
-                    title="Change or upload your exact photo"
-                    className="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center gap-1.5 text-white transition-opacity backdrop-blur-xs cursor-pointer"
-                  >
-                    <Camera className="w-6 h-6 text-cyan-400" />
-                    <span className="text-[10px] font-bold text-cyan-200">Change Photo</span>
-                  </button>
                 </div>
 
                 {/* Profile Identity & Tag */}
@@ -192,17 +159,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       <GraduationCap className="w-3 h-3 text-cyan-400" />
                       <span>B.Tech CSE (AI/ML) • LPU</span>
                     </div>
-
-                    {isCustom && (
-                      <button
-                        onClick={resetPhoto}
-                        title="Reset to default photo"
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-300 transition"
-                      >
-                        <RotateCcw className="w-2.5 h-2.5" />
-                        <span>Reset</span>
-                      </button>
-                    )}
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white tracking-tight">
@@ -219,17 +175,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     <span className="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-amber-300 font-semibold">
                       12th: 97.3%
                     </span>
-                  </div>
-
-                  {/* Direct upload button */}
-                  <div className="pt-1">
-                    <button
-                      onClick={handleUploadClick}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-medium transition cursor-pointer"
-                    >
-                      <Upload className="w-3.5 h-3.5" />
-                      <span>Upload exact original photo</span>
-                    </button>
                   </div>
                 </div>
               </div>

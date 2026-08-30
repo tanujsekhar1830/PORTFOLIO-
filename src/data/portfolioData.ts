@@ -1,5 +1,5 @@
 import { Project, SkillCategory, Certificate, EducationItem, AchievementItem, PresentationSlide } from '../types';
-import profilePhoto from '../assets/images/tanuj_profile_official_1788076448498.jpg';
+import profilePhoto from '../assets/images/tanuj_profile_exact_1788089149242.jpg';
 
 export const personalInfo = {
   name: "Nakka Tanuj Sekhar",
