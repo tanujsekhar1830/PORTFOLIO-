@@ -12,6 +12,7 @@ import {
   Code2
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { useProfilePhoto } from '../context/ProfileContext';
 
 interface NavbarProps {
   onOpenPresentation: () => void;
@@ -22,6 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenPresentation,
   onOpenResume
 }) => {
+  const { photoUrl } = useProfilePhoto();
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
 
@@ -51,9 +53,20 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/40 shadow-md shadow-cyan-500/20 group-hover:scale-105 transition flex items-center justify-center text-cyan-400 font-bold text-sm font-mono">
-            TS
-          </div>
+          {photoUrl ? (
+            <div className="w-10 h-10 rounded-xl overflow-hidden border border-cyan-500/40 shadow-md shadow-cyan-500/20 group-hover:scale-105 transition relative bg-slate-900 shrink-0">
+              <img
+                src={photoUrl}
+                alt={personalInfo.name}
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          ) : (
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/40 shadow-md shadow-cyan-500/20 group-hover:scale-105 transition flex items-center justify-center text-cyan-400 font-bold text-sm font-mono shrink-0">
+              TS
+            </div>
+          )}
           <div>
             <div className="font-bold text-white tracking-tight text-base group-hover:text-cyan-400 transition">
               {personalInfo.name}

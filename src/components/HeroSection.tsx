@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { 
   Tv, 
   Cpu, 
@@ -12,9 +12,13 @@ import {
   CheckCircle2, 
   GraduationCap, 
   Award,
-  Sprout
+  Sprout,
+  Camera,
+  Upload,
+  Trash2
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import { useProfilePhoto } from '../context/ProfileContext';
 
 interface HeroSectionProps {
   onOpenPresentation: () => void;
@@ -27,6 +31,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenResume,
   onJumpToSimulator
 }) => {
+  const { photoUrl, setCustomPhoto, removePhoto, isUploaded } = useProfilePhoto();
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setCustomPhoto(e.target.files[0]);
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      setCustomPhoto(e.dataTransfer.files[0]);
+    }
+  };
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Background Decorative Gradients */}
@@ -132,38 +166,115 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Right Column: Profile Identity Card & Academic Highlight Bento */}
           <div className="lg:col-span-5 space-y-4">
+            {/* Hidden Input for direct file selection */}
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              accept="image/*"
+              className="hidden"
+            />
+
             {/* Profile Identity Card */}
-            <div className="bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 rounded-3xl p-6 shadow-2xl backdrop-blur-sm relative overflow-hidden group transition">
-              <div className="flex items-center gap-4">
-                {/* Monogram / Tech Emblem */}
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-indigo-600/20 border border-cyan-500/40 flex flex-col items-center justify-center text-cyan-400 font-bold font-mono shadow-lg shadow-cyan-500/10 shrink-0">
-                  <span className="text-xl tracking-tighter">TS</span>
-                  <span className="text-[9px] uppercase font-sans text-cyan-300 font-semibold tracking-widest">AI/ML</span>
-                </div>
+            <div 
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              className={`bg-slate-900/80 border rounded-3xl p-5 sm:p-6 shadow-2xl backdrop-blur-sm relative overflow-hidden group transition ${
+                isDragging
+                  ? 'border-cyan-400 bg-cyan-950/40 ring-2 ring-cyan-500/40'
+                  : 'border-slate-800 hover:border-cyan-500/40'
+              }`}
+            >
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+                {/* Photo / TS Monogram Container */}
+                {isUploaded && photoUrl ? (
+                  <div 
+                    onClick={handleUploadClick}
+                    title="Click to change photo"
+                    className="relative shrink-0 w-24 sm:w-28 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-cyan-500/50 shadow-xl shadow-cyan-500/10 group-hover:scale-[1.02] transition-all duration-300 bg-slate-950 cursor-pointer group/photo"
+                  >
+                    <img
+                      src={photoUrl}
+                      alt={personalInfo.name}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-center"
+                    />
+                    {/* Active Online Indicator */}
+                    <span className="absolute bottom-2 right-2 flex h-3.5 w-3.5 z-10">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-slate-900"></span>
+                    </span>
+
+                    {/* Hover Camera Overlay */}
+                    <div className="absolute inset-0 bg-slate-950/75 opacity-0 group-hover/photo:opacity-100 flex flex-col items-center justify-center gap-1 text-white transition-opacity backdrop-blur-xs">
+                      <Camera className="w-5 h-5 text-cyan-400" />
+                      <span className="text-[10px] font-bold text-cyan-200">Change</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div 
+                    onClick={handleUploadClick}
+                    title="Click to upload photo"
+                    className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-cyan-500/20 via-blue-600/20 to-indigo-600/20 border-2 border-dashed border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-950/40 flex flex-col items-center justify-center text-cyan-400 font-bold font-mono shadow-lg shadow-cyan-500/10 shrink-0 cursor-pointer group/badge transition-all"
+                  >
+                    <span className="text-2xl sm:text-3xl tracking-tighter group-hover/badge:scale-95 transition-transform">TS</span>
+                    <span className="text-[9px] uppercase font-sans text-cyan-300 font-semibold tracking-widest mt-0.5">AI/ML</span>
+                    
+                    {/* Small Camera Badge */}
+                    <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-cyan-500 text-slate-950 flex items-center justify-center shadow-md border-2 border-slate-900 group-hover/badge:scale-110 transition-transform">
+                      <Camera className="w-3 h-3" />
+                    </div>
+                  </div>
+                )}
 
                 {/* Profile Identity & Tag */}
-                <div className="space-y-1.5 flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-2">
+                <div className="space-y-2 flex-1 min-w-0 text-center sm:text-left">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-950/80 border border-cyan-800 text-[11px] font-semibold text-cyan-300 font-mono">
                       <GraduationCap className="w-3 h-3 text-cyan-400" />
                       <span>B.Tech CSE (AI/ML) • LPU</span>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white tracking-tight truncate">
+                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight truncate">
                       {personalInfo.name}
                     </h3>
                     <p className="text-xs text-slate-400 truncate">
                       IoT Embedded Systems • Web Engineering • Python Teaching
                     </p>
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 pt-0.5 text-[11px] text-slate-400 font-mono">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-0.5 text-[11px] text-slate-400 font-mono">
                     <span className="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-300 font-semibold">
                       CGPA: {personalInfo.cgpa}
                     </span>
                     <span className="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-amber-300 font-semibold">
                       12th: 97.3%
                     </span>
+                  </div>
+
+                  {/* Photo Controls: Upload / Change / Remove */}
+                  <div className="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                    <button
+                      type="button"
+                      onClick={handleUploadClick}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-semibold transition cursor-pointer hover:scale-105 shadow-sm"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      <span>{isUploaded ? 'Change Photo' : 'Upload Photo'}</span>
+                    </button>
+
+                    {isUploaded && (
+                      <button
+                        type="button"
+                        onClick={removePhoto}
+                        title="Remove uploaded photo and return to TS monogram"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-slate-800/80 hover:bg-rose-950/60 text-slate-400 hover:text-rose-300 border border-slate-700/60 hover:border-rose-500/40 text-xs font-medium transition cursor-pointer"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                        <span>Reset to TS</span>
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

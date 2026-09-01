@@ -13,6 +13,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { personalInfo, projectsData, skillsData, certificatesData, educationData, achievementsData } from '../data/portfolioData';
+import { useProfilePhoto } from '../context/ProfileContext';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -20,6 +21,7 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
+  const { photoUrl } = useProfilePhoto();
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   if (!isOpen) return null;
@@ -69,13 +71,25 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Header Block */}
           <div className="border-b border-slate-700 pb-5 space-y-3">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div>
-                <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight uppercase">
-                  {personalInfo.name}
-                </h1>
-                <p className="text-xs text-cyan-400 font-semibold mt-0.5">
-                  B.Tech Computer Science and Engineering (Specialization: AI & Machine Learning) • Lovely Professional University
-                </p>
+              <div className="flex items-center gap-4">
+                {photoUrl && (
+                  <div className="w-16 h-20 sm:w-18 sm:h-22 rounded-xl overflow-hidden border-2 border-cyan-500/40 shrink-0 shadow-md bg-slate-950">
+                    <img
+                      src={photoUrl}
+                      alt={personalInfo.name}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                )}
+                <div>
+                  <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight uppercase">
+                    {personalInfo.name}
+                  </h1>
+                  <p className="text-xs text-cyan-400 font-semibold mt-0.5">
+                    B.Tech Computer Science and Engineering (Specialization: AI & Machine Learning) • Lovely Professional University
+                  </p>
+                </div>
               </div>
 
               <div className="text-left sm:text-right space-y-1">
