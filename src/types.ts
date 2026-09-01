@@ -60,6 +60,14 @@ export interface EducationItem {
   courseworkOrFocus?: string[];
 }
 
+export interface TrainingItem {
+  id: string;
+  institution: string;
+  program: string;
+  duration: string;
+  highlights: string[];
+}
+
 export interface AchievementItem {
   id: string;
   title: string;

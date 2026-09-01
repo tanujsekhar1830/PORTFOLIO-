@@ -7,9 +7,10 @@ import {
   CheckCircle2, 
   Sparkles, 
   Trophy, 
-  BookOpen
+  BookOpen,
+  Briefcase
 } from 'lucide-react';
-import { educationData, achievementsData } from '../data/portfolioData';
+import { educationData, achievementsData, trainingData } from '../data/portfolioData';
 
 export const EducationSection: React.FC = () => {
   return (
@@ -19,18 +20,18 @@ export const EducationSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/80 text-xs font-semibold text-cyan-400">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Academic Background</span>
+            <span>Academic & Training Background</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Education & Honors
+            Education, Training & Honors
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Strong foundations in mathematics, physical sciences, and computer engineering.
+            Foundations in Computer Science, AI/ML specialization, high academic distinctions, and structured training.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          {/* Left Column: Education Timeline */}
+          {/* Left Column: Education & Training Timeline */}
           <div className="lg:col-span-7 space-y-6">
             <h3 className="text-lg font-bold text-white flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-cyan-400" /> Formal Education Timeline
@@ -96,6 +97,44 @@ export const EducationSection: React.FC = () => {
                 </div>
               ))}
             </div>
+
+            {/* Training Card */}
+            {trainingData && trainingData.length > 0 && (
+              <div className="space-y-4 pt-4">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Briefcase className="w-5 h-5 text-emerald-400" /> Professional Training
+                </h3>
+                {trainingData.map((training) => (
+                  <div
+                    key={training.id}
+                    className="p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30 space-y-3 shadow-lg shadow-emerald-500/5"
+                  >
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <div>
+                        <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                          {training.institution}
+                        </span>
+                        <h4 className="text-base font-bold text-white mt-0.5">
+                          {training.program}
+                        </h4>
+                      </div>
+                      <span className="text-xs font-mono text-slate-400 bg-slate-950 px-2.5 py-1 rounded-lg border border-slate-800">
+                        {training.duration}
+                      </span>
+                    </div>
+
+                    <div className="space-y-1.5 pt-2 border-t border-slate-800/80">
+                      {training.highlights.map((highlight, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right Column: Achievements & Academic Milestones */}

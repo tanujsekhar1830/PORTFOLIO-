@@ -1,107 +1,98 @@
-import { Project, SkillCategory, Certificate, EducationItem, AchievementItem, PresentationSlide } from '../types';
+import { Project, SkillCategory, Certificate, EducationItem, AchievementItem, TrainingItem, PresentationSlide } from '../types';
 import profilePhoto from '../assets/images/tanuj_profile_exact_1788089149242.jpg';
 
 export const personalInfo = {
   name: "Nakka Tanuj Sekhar",
   photo: profilePhoto,
-  title: "B.Tech CSE • AI & ML Specialization",
-  shortBio: "B.Tech Computer Science and Engineering (CSE) student at Lovely Professional University with a dedicated specialization in Artificial Intelligence & Machine Learning (AI/ML). Passionate about embedded IoT hardware systems, modern full-stack web platforms, and applied machine learning with proven leadership in peer Python education.",
+  title: "B.Tech CSE (AIML) • Lovely Professional University",
+  shortBio: "B.Tech Computer Science and Engineering (AIML) student at Lovely Professional University. Passionate about Python programming, web development, IoT-embedded systems, and applied AI problem-solving.",
   email: "tanujsekhar18@gmail.com",
   phone: "+91-9784668230",
   whatsapp: "+919784668230",
   location: "Phagwara, Punjab / Visakhapatnam, India",
   linkedin: "https://www.linkedin.com/in/tanuj-sekhar-nakka-61608037a",
   github: "https://github.com/tanujsekhar1830",
-  cgpa: "7.47 CGPA",
-  highestSchoolScore: "97.3% (12th Boards)",
-  status: "B.Tech CSE (AI/ML Specialization) • LPU",
+  cgpa: "7.47",
+  highestSchoolScore: "97.3%",
+  status: "B.Tech CSE (AIML) • LPU",
   certificatesDriveUrl: "https://drive.google.com/drive/u/0/my-drive",
 };
 
 export const projectsData: Project[] = [
   {
-    id: "smart-helmet",
-    title: "Smart Helmet with Accident Detection & Emergency Alert System",
-    subtitle: "IoT Embedded Safety System with Real-Time Impact Sensing & Telemetry Broadcast",
-    category: "IoT & Hardware",
-    date: "April 2026",
+    id: "python-cdp-teaching",
+    title: "Python Programming Teaching – Community Development Project (CDP)",
+    subtitle: "Interactive Pedagogy, Hands-on Mentorship & Fundamental Problem Solving",
+    category: "Education & Community",
+    date: "July 2026",
     featured: true,
-    tagline: "Life-saving motorcycle safety system with automated impact telemetry and emergency SOS dispatch.",
-    overview: "An IoT-enabled smart safety helmet engineered to drastically reduce emergency response times for two-wheeler accidents. Using high-sensitivity vibration and IR sensors coupled with an ESP8266 microcontroller, the system detects severe crash impacts and helmet-wearing status, sounding an audible buzzer alert and automatically dispatching exact location coordinates to emergency contacts.",
+    tagline: "Taught fundamental Python programming and problem-solving through interactive exercises and coding demonstrations.",
+    overview: "Led a Community Development Project (CDP) at Lovely Professional University focused on teaching fundamental Python programming to students. Delivered structured hands-on coding demonstrations covering variables, data types, operators, conditional statements, loops, and basic programming logic to build foundational problem-solving skills.",
     highlights: [
-      "Integrated vibration and IR proximity sensors to accurately detect crash forces while verifying active helmet usage.",
-      "Engineered an automated emergency workflow triggered upon abnormal threshold breaches with an audible buzzer override.",
-      "Implemented wireless telemetry and location-based emergency notification mechanisms over Wi-Fi/GSM to notify relatives and first responders.",
-      "Designed fault-tolerant microcontroller logic on ESP8266 using Arduino IDE with low latency interrupt-based handling."
+      "Taught fundamental Python concepts including variables, data types, operators, conditional statements, loops, and basic programming logic.",
+      "Delivered practical coding demonstrations and hands-on exercises to help students understand programming concepts effectively.",
+      "Developed students' foundational programming and problem-solving skills through interactive learning activities."
     ],
     techStack: [
-      { name: "ESP8266 NodeMCU", category: "Microcontroller" },
-      { name: "SW-420 Vibration Sensor", category: "Sensors" },
-      { name: "IR Proximity Sensor", category: "Sensors" },
-      { name: "Piezo Buzzer Alarm", category: "Output Actuator" },
-      { name: "Arduino IDE / C++", category: "Embedded Firmware" },
-      { name: "IoT & Webhooks", category: "Networking" },
+      { name: "Python", category: "Programming Language" },
+      { name: "VS Code", category: "Development Tool" }
     ],
-    problemStatement: "Over 70% of fatal two-wheeler accidents suffer from delayed emergency medical care due to lack of immediate accident detection in secluded or highway zones.",
-    solutionArchitecture: "Sensors (IR for helmet wear state + Piezoelectric Vibration for G-force spike) -> ESP8266 Interrupt Routine -> 10-second cancel window buzzer -> Cloud Webhook / SMS API with GPS Coordinates broadcast.",
+    problemStatement: "Beginner learners often encounter steep learning curves when learning programming logic and core syntax without structured hands-on guidance.",
+    solutionArchitecture: "Structured interactive learning curriculum: Conceptual Introduction -> Live Practical Demonstration -> Guided Hands-on Exercises -> Foundational Problem-Solving Drills.",
     classTalkingPoints: [
-      "How interrupt service routines (ISRs) prevent CPU lock during continuous sensor polling on the ESP8266.",
-      "Why combining IR wear detection with vibration sensing eliminates false positives when the helmet is simply dropped.",
-      "The practical safety impact: reduces golden-hour medical intervention lag by automating location dispatch.",
-      "Hardware power management considerations for a portable 5V battery-operated helmet module."
+      "Pedagogy of breaking down core computational logic (loops, conditionals, data structures) for beginners.",
+      "How delivering hands-on coding exercises accelerated students' understanding.",
+      "How teaching deepened my personal mastery of Python programming fundamentals and debugging."
     ],
     keyChallenges: [
-      "Calibrating vibration sensitivity to distinguish between road potholes and true collisions.",
-      "Ensuring rapid Wi-Fi reconnection or backup packet dispatch in intermittent network conditions."
+      "Designing interactive coding exercises suitable for students with varying background knowledge.",
+      "Ensuring active student engagement and conceptual clarity across loops and conditional structures."
     ],
     metrics: [
-      { label: "Alert Dispatch Latency", value: "< 2.5s" },
-      { label: "False Positive Reduction", value: "94%" },
-      { label: "Hardware Cost", value: "Under ₹1,200" }
+      { label: "Core Modules", value: "Loops & Data Types" },
+      { label: "Interactive Labs", value: "Practical Exercises" },
+      { label: "Pedagogy Impact", value: "Foundational Logic" }
     ],
-    demoType: "iot-helmet",
+    demoType: "python-teaching",
     links: {
       github: "https://github.com/tanujsekhar1830",
     }
   },
   {
     id: "agri-platform",
-    title: "Agri Platform — Centralized Agricultural Knowledge & Resource Portal",
-    subtitle: "Web-Based Agricultural Resource Platform for Farmers & Agri-Entrepreneurs",
+    title: "Agri Platform Website",
+    subtitle: "Web-Based Agricultural Information & Resource Platform",
     category: "Web Development",
-    date: "February 2026",
+    date: "Feb 2026",
     featured: true,
-    tagline: "Empowering rural communities with accessible digital agriculture resources and real-time market data.",
-    overview: "A comprehensive digital agriculture portal built to bridge the information gap for farmers and agricultural stakeholders. The web application unifies vital crop cultivation advisories, seasonal disease diagnostics, live market/mandi commodity prices, and government subsidy schemes into a clean, lightweight, highly accessible web interface.",
+    tagline: "Centralized web platform providing accessible agricultural information and digital resources.",
+    overview: "Developed a responsive web-based agricultural platform designed to provide users with agriculture-related information and digital resources through a centralized interface. Designed and implemented a user-friendly website interface to organize agricultural content, improve accessibility, and provide engaging user experience.",
     highlights: [
-      "Developed a responsive multi-page web platform structured for low-bandwidth rural connectivity.",
-      "Designed and implemented intuitive interactive components for crop search, soil moisture irrigation guidance, and market price tracking.",
-      "Structured semantic HTML, clean modular CSS stylesheets, and dynamic JavaScript DOM interactions for seamless user experience.",
-      "Organized categorized agricultural digital resources to maximize accessibility for non-technical rural users."
+      "Developed a web-based agricultural platform designed to provide users with agriculture-related information and digital resources through a centralized interface.",
+      "Designed and implemented a user-friendly website interface to organize agricultural content and improve accessibility for users.",
+      "Implemented responsive web pages and interactive components to provide a smooth and engaging user experience.",
+      "Applied web development concepts to structure, style, and enhance the functionality of the platform."
     ],
     techStack: [
-      { name: "JavaScript (ES6+)", category: "Frontend Logic" },
-      { name: "HTML5 Semantic Structure", category: "Markup" },
-      { name: "CSS3 Responsive Grid/Flexbox", category: "Styling" },
-      { name: "DOM Manipulation APIs", category: "Core Web" },
-      { name: "VS Code", category: "Development Tool" },
-      { name: "Git & GitHub", category: "Version Control" }
+      { name: "HTML", category: "Markup Structure" },
+      { name: "CSS", category: "Styling & Layout" },
+      { name: "JavaScript", category: "Frontend Logic" }
     ],
-    problemStatement: "Farmers frequently lose up to 30% of their crop value due to fragmented market pricing information and delayed advisory on seasonal crop diseases.",
-    solutionArchitecture: "Client-side interactive state architecture with responsive UI cards, localized search filters, dynamic price calculator, and modular resource categorization.",
+    problemStatement: "Farmers and agricultural users often face fragmented access to critical crop cultivation advisories, market rates, and digital resources.",
+    solutionArchitecture: "Modular client-side architecture with responsive pages, dynamic resource categorization, interactive crop advisory tools, and accessible UI.",
     classTalkingPoints: [
-      "Importance of UI accessibility and contrast when designing for diverse demographic backgrounds.",
-      "How modular JavaScript architecture enables swift content updates without complex framework overhead.",
-      "Interactive data filtering for crop advisories based on soil type, region, and season."
+      "Design principles for accessibility and responsive layouts across mobile and desktop devices.",
+      "Structuring semantic HTML and CSS for fast, reliable page loading.",
+      "Vanilla JavaScript DOM interactions for interactive agricultural resource discovery."
     ],
     keyChallenges: [
-      "Creating a mobile-first interface that renders flawlessly on entry-level smartphones and varying screen resolutions.",
-      "Optimizing asset weight and script execution for fast load times on 3G/4G networks."
+      "Designing a clean, intuitive layout to organize rich agricultural resources without overwhelming users.",
+      "Ensuring responsive rendering across diverse screen sizes."
     ],
     metrics: [
-      { label: "Page Load Performance", value: "98/100" },
-      { label: "Resource Categories", value: "6 Major Modules" },
-      { label: "Responsive Breakpoints", value: "Mobile, Tablet, Desktop" }
+      { label: "Tech Stack", value: "HTML, CSS, JS" },
+      { label: "Design", value: "User-Friendly UI" },
+      { label: "Responsiveness", value: "Multi-Device" }
     ],
     demoType: "agri-platform",
     links: {
@@ -109,44 +100,44 @@ export const projectsData: Project[] = [
     }
   },
   {
-    id: "python-cdp-teaching",
-    title: "Python Programming Teaching — Community Development Project",
-    subtitle: "Interactive Pedagogy, Hands-on Mentorship & Fundamental Problem Solving",
-    category: "Education & Community",
-    date: "July 2026",
+    id: "smart-helmet",
+    title: "Smart Helmet with Accident Detection and Emergency Alert System",
+    subtitle: "IoT Safety Helmet with Crash Sensing & Location Notification",
+    category: "IoT & Hardware",
+    date: "April 2026",
     featured: true,
-    tagline: "Mentored aspiring students in Python fundamentals and computational problem-solving.",
-    overview: "Led a structured Community Development Project (CDP) at Lovely Professional University focused on teaching fundamental Python programming to beginners. Delivered structured hands-on live coding workshops covering core programming principles (variables, control flow, loops, data structures, and functions) while designing custom interactive coding challenges.",
+    tagline: "IoT-enabled smart safety helmet with automated impact detection and emergency location alerts.",
+    overview: "Developed a smart safety helmet system for accident and crash detection using sensors and an IoT-enabled microcontroller. Integrated vibration and IR sensors to detect potential accident conditions, trigger emergency buzzer warnings, and broadcast location-based emergency notifications to concerned contacts.",
     highlights: [
-      "Taught fundamental Python concepts including variables, data types, operators, conditional statements, loops, and algorithmic logic.",
-      "Delivered live coding demonstrations and curated hands-on coding exercises to demystify programming barriers.",
-      "Cultivated students' computational thinking and debugging techniques through interactive classroom code walkthroughs.",
-      "Earned official recognition and structured training completion from Lovely Professional University."
+      "Developed a smart safety helmet system for accident and crash detection using sensors and an IoT-enabled microcontroller.",
+      "Integrated vibration and IR sensors to detect potential accident conditions and trigger an emergency alert mechanism.",
+      "Implemented buzzer-based warning and emergency interaction features to improve rider safety during critical situations.",
+      "Enabled location-based emergency notification functionality for sharing the accident location with the concerned person."
     ],
     techStack: [
-      { name: "Python 3.x", category: "Programming Language" },
-      { name: "VS Code & Terminal", category: "Environment" },
-      { name: "Interactive Debugging", category: "Pedagogy" },
-      { name: "Problem Solving & Logic", category: "Core Skill" },
-      { name: "Mentorship & Public Speaking", category: "Leadership" }
+      { name: "ESP8266", category: "Microcontroller" },
+      { name: "IR Sensor", category: "Proximity Sensor" },
+      { name: "Vibration Sensor", category: "Impact Sensor" },
+      { name: "Buzzer", category: "Warning Actuator" },
+      { name: "IoT", category: "Telemetry & Alert" }
     ],
-    problemStatement: "Beginner programming students often struggle with abstract syntax and logic flow without interactive visual step-by-step guidance.",
-    solutionArchitecture: "Visual pedagogy framework: Concept Introduction -> Real-World Analogy -> Live Code Interactive Walkthrough -> Guided Debugging Exercise -> Student Challenge.",
+    problemStatement: "Motorcycle accident victims often experience delayed medical attention because accidents in isolated areas go unnoticed.",
+    solutionArchitecture: "Vibration Sensor (Impact detection) + IR Sensor (Helmet wear verification) -> ESP8266 microcontroller -> Buzzer warning -> Location-based emergency alert notification.",
     classTalkingPoints: [
-      "The pedagogical approach of teaching code: moving from pseudo-code and mental models to syntax.",
-      "Common conceptual bottlenecks beginners face with loops, indentation, and variable mutability.",
-      "How teaching reinforced my own mastery of core programming fundamentals and clear technical communication."
+      "Dual sensor integration (IR + Vibration) to verify authentic accident events vs. false alarms.",
+      "Microcontroller interrupt-driven alert triggers on ESP8266.",
+      "Emergency notification workflow transmitting location coordinates to emergency contacts."
     ],
     keyChallenges: [
-      "Pacing the curriculum to accommodate students with diverse prior exposure to computer science.",
-      "Designing hands-on mini projects that kept learners motivated and engaged."
+      "Calibrating vibration thresholds to prevent false alarms during normal rides.",
+      "Coordinating buzzer warnings with automated location dispatch."
     ],
     metrics: [
-      { label: "Key Concepts Covered", value: "10+ Core Modules" },
-      { label: "Practical Coding Labs", value: "15+ Exercises" },
-      { label: "Student Engagement", value: "100% Completion" }
+      { label: "Sensors", value: "IR + Vibration" },
+      { label: "Microcontroller", value: "ESP8266" },
+      { label: "Alert Feature", value: "Location SOS" }
     ],
-    demoType: "python-teaching",
+    demoType: "iot-helmet",
     links: {
       github: "https://github.com/tanujsekhar1830",
     }
@@ -155,45 +146,61 @@ export const projectsData: Project[] = [
 
 export const skillsData: SkillCategory[] = [
   {
-    category: "Programming Languages",
+    category: "Languages",
     iconName: "Code2",
     skills: [
-      { name: "Python", level: 92, experience: "Primary language for problem solving, automation, scripting, and teaching", appliedIn: "Infosys Certs, Python CDP, Algorithm practice" },
-      { name: "JavaScript (ES6+)", level: 85, experience: "Core web development, interactive DOM manipulation, modern async flow", appliedIn: "Agri Platform Website, Interactive Portals" },
-      { name: "C & C++", level: 85, experience: "150-hour programming foundation, memory management, embedded firmware", appliedIn: "iamneo NIIT Cert, ESP8266 Firmware" },
-      { name: "SQL", level: 82, experience: "Relational queries, schema design, joins, aggregation, data integrity", appliedIn: "MySQL database labs, DBMS coursework" }
+      { name: "Python", level: 92, experience: "Core programming language for problem solving, automation, and teaching", appliedIn: "Python CDP, Infosys Springboard" },
+      { name: "JavaScript", level: 85, experience: "Web interactivity, DOM manipulation, responsive components", appliedIn: "Agri Platform Website" },
+      { name: "C", level: 85, experience: "Core foundational programming, memory principles, algorithmic logic", appliedIn: "Neo Colab Coursework" },
+      { name: "C++", level: 86, experience: "Object-oriented programming, data structures, and embedded firmware", appliedIn: "Coursework & Embedded Systems" },
+      { name: "SQL", level: 82, experience: "Relational database querying, schema design, and data manipulation", appliedIn: "DBMS Coursework & MySQL" }
     ]
   },
   {
-    category: "Technologies & Core Concepts",
+    category: "Technologies",
     iconName: "Layers",
     skills: [
-      { name: "HTML5 & Semantic Web", level: 92, experience: "Modern accessible markup, semantic document flow", appliedIn: "Agri Platform, Web Applications" },
-      { name: "CSS3 & Responsive Design", level: 88, experience: "Flexbox, Grid, keyframe animations, media queries", appliedIn: "Portfolio, Agri Platform" },
-      { name: "Object-Oriented Programming (OOP)", level: 86, experience: "Encapsulation, inheritance, polymorphism, abstraction", appliedIn: "C++, Python, Software Architecture" },
-      { name: "Database Management (DBMS)", level: 84, experience: "Relational modeling, normalization (1NF-BCNF), ACID properties", appliedIn: "Coursework, MySQL projects" }
+      { name: "HTML", level: 90, experience: "Semantic webpage structure, document layout, accessible markup", appliedIn: "Agri Platform Website" },
+      { name: "CSS", level: 88, experience: "Responsive styling, Flexbox, Grid layouts, and user interface styling", appliedIn: "Agri Platform Website" },
+      { name: "Object-Oriented Programming", level: 86, experience: "Encapsulation, inheritance, polymorphism, modular software design", appliedIn: "Python, C++, System Design" },
+      { name: "DBMS", level: 84, experience: "Database management concepts, relational models, transactions, and indexing", appliedIn: "MySQL & Academic Coursework" }
     ]
   },
   {
-    category: "IoT, Embedded & Systems",
+    category: "Databases & Tools",
     iconName: "Cpu",
     skills: [
-      { name: "ESP8266 & Microcontrollers", level: 88, experience: "NodeMCU, GPIO, interrupt routines, Wi-Fi telemetry", appliedIn: "Smart Helmet Accident Detection" },
-      { name: "Sensors & Actuators", level: 85, experience: "Vibration sensors, IR proximity, buzzer systems, ADC", appliedIn: "Smart Helmet, ECE249 Project" },
-      { name: "Arduino IDE", level: 86, experience: "Board managers, library integrations, serial debugging", appliedIn: "Hardware prototyping" },
-      { name: "Cybersecurity Fundamentals", level: 84, experience: "Threat vectors, network security, data protection, secure coding", appliedIn: "Infosys Springboard Cybersecurity" },
-      { name: "Git & GitHub", level: 88, experience: "Branching, version tracking, repository management", appliedIn: "All project source control" },
-      { name: "VS Code & Dev Tools", level: 92, experience: "Debugging, extensions, linters, workspace optimization", appliedIn: "Primary development stack" }
+      { name: "MySQL", level: 84, experience: "Relational database management, querying, tables, and views", appliedIn: "DBMS Labs & Projects" },
+      { name: "Arduino IDE", level: 86, experience: "Flashing firmware, library integration, and hardware prototyping", appliedIn: "ESP8266 Smart Helmet Project" },
+      { name: "Git", level: 88, experience: "Version control, branching, commits, and collaborative workflows", appliedIn: "Project Repository Management" },
+      { name: "GitHub", level: 88, experience: "Remote repository hosting, documentation, and version control", appliedIn: "github.com/tanujsekhar1830" },
+      { name: "VS Code", level: 92, experience: "Primary development IDE for Python, Web, and C++ code", appliedIn: "Python CDP & Web Projects" },
+      { name: "Microsoft Office", level: 88, experience: "Documentation, presentation creation, and data organization", appliedIn: "Academic & Project Reporting" }
     ]
   },
   {
-    category: "Soft Skills & Leadership",
+    category: "Soft Skills",
     iconName: "Users",
     skills: [
-      { name: "Technical Communication & Pedagogy", level: 92, experience: "Explaining technical concepts clearly to diverse audiences", appliedIn: "Python Teaching CDP, Presentations" },
-      { name: "Leadership & Team Coordination", level: 90, experience: "Team motivation, conflict resolution, collaborative milestone tracking", appliedIn: "EduTech Hub Leadership, Project Teams" },
-      { name: "Problem Solving & Logic", level: 94, experience: "Algorithmic thinking, debugging complex systems under tight deadlines", appliedIn: "Coding challenges, Hackathons" },
-      { name: "Adaptability & Rapid Learning", level: 92, experience: "Quickly learning new stacks (IoT sensors, web frameworks)", appliedIn: "University Projects, Hackathons" }
+      { name: "Problem Solving", level: 94, experience: "Analytical thinking, debugging logic, and structured problem resolution", appliedIn: "Hackathons, Python Pedagogy" },
+      { name: "Team Collaboration", level: 90, experience: "Coordinating with peers and working collaboratively on technical projects", appliedIn: "ECE249 Project, CDP Teaching" },
+      { name: "Time Management", level: 88, experience: "Balancing academic coursework, project deliverables, and certifications", appliedIn: "Academic & Project Timelines" },
+      { name: "Adaptability", level: 92, experience: "Quickly learning new technologies, IoT microcontrollers, and frameworks", appliedIn: "Hackathons & Technical Projects" },
+      { name: "Communication", level: 92, experience: "Explaining complex technical concepts clearly to students and peers", appliedIn: "Python CDP Workshop Delivery" }
+    ]
+  }
+];
+
+export const trainingData: TrainingItem[] = [
+  {
+    id: "lpu-cdp-training",
+    institution: "Lovely Professional University",
+    program: "Community Development Project (Python Teaching)",
+    duration: "July 2026",
+    highlights: [
+      "Completed structured training in Python programming fundamentals and problem-solving.",
+      "Developed understanding of Python syntax, data types, operators, conditional statements, loops, functions, and basic programming concepts.",
+      "Applied Python concepts through practical coding exercises and programming problems."
     ]
   }
 ];
@@ -201,314 +208,249 @@ export const skillsData: SkillCategory[] = [
 export const certificatesData: Certificate[] = [
   {
     id: "oracle-agentic-ai",
-    title: "Oracle Certified Foundations Associate — Agentic AI",
-    issuer: "Oracle University",
-    date: "August 17, 2026",
+    title: "Agentic AI Course Certification",
+    issuer: "Oracle",
+    date: "Aug 2026",
     certificateId: "330695306AAI26OFA",
-    duration: "Valid until August 17, 2028",
-    signatory: "Gary N Miller (Customer Success Officer, EVP CSS)",
+    duration: "Oracle Certified Foundations Associate",
     type: "AI / Emerging Tech",
     badgeColor: "from-amber-500 to-red-500",
-    skillsCovered: ["Autonomous AI Agents", "Workflow Orchestration", "Prompt Architecture", "Enterprise AI Solutions"],
+    skillsCovered: ["Agentic AI Architecture", "Autonomous AI Agents", "Workflow Orchestration", "Prompt Engineering"],
   },
   {
-    id: "infosys-python-part1",
-    title: "Programming Fundamentals using Python - Part 1",
+    id: "infosys-python-cert",
+    title: "Python Programming Certification",
     issuer: "Infosys Springboard",
-    date: "July 11, 2026",
+    date: "July 2026",
     credentialUrl: "https://verify.onwingspan.com",
-    signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
     type: "Programming",
     badgeColor: "from-blue-600 to-cyan-500",
-    skillsCovered: ["Python Syntax & Operators", "Control Flow & Loops", "Core Data Types", "Algorithmic Problem Solving"],
+    skillsCovered: ["Python Fundamentals", "Control Flow & Loops", "Data Structures", "Problem Solving"],
   },
   {
-    id: "infosys-python-part2",
-    title: "Programming Fundamentals using Python - Part 2",
-    issuer: "Infosys Springboard",
-    date: "July 18, 2026",
-    credentialUrl: "https://verify.onwingspan.com",
-    signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
-    type: "Programming",
-    badgeColor: "from-blue-600 to-indigo-500",
-    skillsCovered: ["Functions & Recursion", "File I/O & String Processing", "List Comprehensions & Dictionaries", "Modular Code Structure"],
-  },
-  {
-    id: "infosys-cybersecurity",
-    title: "Introduction to Cyber Security",
-    issuer: "Infosys Springboard",
-    date: "March 9, 2026",
-    credentialUrl: "https://verify.onwingspan.com",
-    signatory: "Satheesha B. Nanjappa (Senior VP & Head, Education & Training)",
-    type: "Security & AI",
-    badgeColor: "from-emerald-600 to-teal-500",
-    skillsCovered: ["Network & System Security", "Malware Defense & Threat Analysis", "Data Confidentiality & Privacy", "Secure Development Practices"],
-  },
-  {
-    id: "iamneo-computer-programming",
-    title: "Computer Programming Certificate of Appreciation (150 Hours)",
-    issuer: "iamneo (An NIIT Venture) & LPU",
-    date: "May 21, 2026",
+    id: "neocolab-programming",
+    title: "Computer Programming Certification",
+    issuer: "Neo Colab",
+    date: "May 2026",
     certificateId: "12CG2CH2Cl2Ce2Df3Bg1",
-    duration: "150 Hours (18-Jan-2026 to 20-May-2026)",
-    signatory: "Senthikumar TP",
+    duration: "Rigorous Computer Programming Training",
     type: "Programming",
     badgeColor: "from-teal-600 to-emerald-500",
-    skillsCovered: ["150 Hours Rigorous Programming", "C / C++ & Data Structures", "Algorithmic Complexity", "Code Optimization & Debugging"],
+    skillsCovered: ["Computer Programming", "Data Structures & Logic", "Algorithms", "Debugging"],
   },
   {
-    id: "lynqup-prompt-builder",
-    title: "Prompt Builder 2026 — Technical Participation Certificate",
-    issuer: "LYNQUP & School of AI and Emerging Technologies (LPU)",
-    date: "February 20, 2026",
-    certificateId: "PB26-021",
-    signatory: "Subham Raj (Authorized Signatory, LYNQUP)",
-    type: "AI / Emerging Tech",
-    badgeColor: "from-purple-600 to-indigo-500",
-    skillsCovered: ["Applied AI Concepts", "Structured Prompt Engineering", "Prompt-Based Solution Development", "Emerging AI Industry Practices"],
-  },
-  {
-    id: "innovxus-prompt-hackathon",
-    title: "Prompt-Builder 2026 — 6-Hour AI Hackathon",
-    issuer: "InnovXus & School of CSE (LPU)",
-    date: "March 25, 2026",
+    id: "ai-prompt-hackathon",
+    title: "AI Prompt Builder Hackathon — 6-Hour Hackathon",
+    issuer: "Certificate of Participation",
+    date: "Feb 2026",
     certificateId: "IX-202600PB070",
-    duration: "6-Hour AI-Based Hackathon (20th-21st Feb 2026)",
-    signatory: "Aryan Raj (CEO, InnovXus) & Manish Kumar Sharma (Faculty Co-ordinator)",
+    duration: "6-Hour AI Hackathon",
     type: "Hackathon",
     badgeColor: "from-pink-600 to-rose-500",
-    skillsCovered: ["AI Hackathon Rapid Prototyping", "Generative AI Prompt Design", "Time-Constrained Problem Solving", "Innovation & Pitching"],
+    skillsCovered: ["AI Prompting", "Generative AI", "Problem-Solving", "Rapid Prototyping"],
   },
   {
     id: "edutech-leadership",
-    title: "Leadership Fundamentals Certificate",
+    title: "Leadership Attributes Certification",
     issuer: "EduTech Hub",
-    date: "October 29, 2025",
+    date: "Oct 2025",
     certificateId: "EDU/10/25/LF-A525",
-    duration: "7 Hours of Coursework",
-    credentialUrl: "https://edutechhub.in",
     type: "Leadership",
     badgeColor: "from-indigo-600 to-violet-500",
-    skillsCovered: ["Leadership Fundamentals", "Team Dynamics", "Active Communication", "Collaborative Problem Solving"],
+    skillsCovered: ["Leadership Attributes", "Team Collaboration", "Communication", "Decision Making"],
+  }
+];
+
+export const achievementsData: AchievementItem[] = [
+  {
+    id: "ece249-project",
+    title: "Technical Project Participation at LPU",
+    category: "Technical Project",
+    description: "Participated in a technical project at LPU in ECE249.",
+    date: "2026"
+  },
+  {
+    id: "infosys-springboard-cert",
+    title: "Infosys Springboard Certification",
+    category: "Professional Certification",
+    description: "Completed Infosys Springboard certification.",
+    date: "July 2026"
+  },
+  {
+    id: "hackathon-generative-ai",
+    title: "AI Prompting & Generative AI Exposure",
+    category: "Hackathon & Emerging AI",
+    description: "Gained practical exposure to AI prompting, generative AI, and problem-solving during the hackathon.",
+    date: "Feb 2026"
   }
 ];
 
 export const educationData: EducationItem[] = [
   {
     id: "lpu-btech",
-    degree: "Bachelor of Technology (B.Tech)",
-    field: "Computer Science and Engineering (Specialization: AI & Machine Learning)",
-    institution: "Lovely Professional University (LPU)",
-    location: "Phagwara, Punjab, India",
-    duration: "August 2025 – Present",
-    score: "7.47 CGPA",
+    degree: "Bachelor of Technology - Computer Science and Engineering (AIML)",
+    field: "Specialization: Artificial Intelligence & Machine Learning",
+    institution: "Lovely Professional University",
+    location: "Phagwara, Punjab",
+    duration: "Aug 2025 - Present",
+    score: "CGPA: 7.47",
     scoreLabel: "Current CGPA",
     isHighlight: false,
     courseworkOrFocus: [
-      "Artificial Intelligence & Machine Learning Specialization",
-      "Data Structures & Algorithms",
-      "Object-Oriented Programming (C++ & Python)",
-      "Database Management Systems (DBMS & SQL)",
-      "Community Development Project (Python Teaching)"
+      "Computer Science and Engineering (AIML)",
+      "Python Programming fundamentals and problem-solving",
+      "Object-Oriented Programming and DBMS"
     ]
   },
   {
     id: "narayana-junior",
-    degree: "Higher Secondary Education (12th Grade / Intermediate)",
-    field: "MPC (Mathematics, Physics, Chemistry)",
+    degree: "Higher Secondary Education",
+    field: "Intermediate / MPC",
     institution: "Narayana Junior College",
-    location: "Visakhapatnam, Andhra Pradesh, India",
-    duration: "May 2023 – March 2025",
-    score: "97.3%",
-    scoreLabel: "Board Exam Distinction",
+    location: "Visakhapatnam, Andhra Pradesh",
+    duration: "May 2023 - Mar 2025",
+    score: "Percentage: 97.3%",
+    scoreLabel: "Board Distinction",
     isHighlight: true,
     courseworkOrFocus: [
-      "Top percentile academic achievement (97.3%)",
-      "Rigorous problem-solving in Advanced Mathematics & Physics",
-      "Strong analytical and logical reasoning foundation"
+      "Higher Secondary Education with 97.3% Percentage",
+      "Strong analytical and mathematical reasoning foundation"
     ]
   },
   {
     id: "dav-hzl",
-    degree: "Secondary Education (10th Grade / CBSE)",
-    field: "General Science & Mathematics",
+    degree: "Secondary Education",
+    field: "CBSE Curriculum",
     institution: "DAV HZL Senior Secondary School",
-    location: "Dariba, Rajasthan, India",
-    duration: "June 2022 – March 2023",
-    score: "72.7%",
-    scoreLabel: "Secondary Board Score",
+    location: "Dariba, Rajasthan",
+    duration: "Jun 2022 - Mar 2023",
+    score: "Percentage: 72.7%",
+    scoreLabel: "Board Exam",
     isHighlight: false,
     courseworkOrFocus: [
-      "Foundation in Mathematics and Science",
-      "Active participation in science exhibitions and co-curriculars"
+      "Secondary Education with 72.7% Percentage",
+      "Core foundation in Science and Mathematics"
     ]
-  }
-];
-
-export const achievementsData: AchievementItem[] = [
-  {
-    id: "oracle-agentic-cert",
-    title: "Oracle Certified Foundations Associate (Agentic AI)",
-    category: "AI & Emerging Tech Credential",
-    description: "Officially certified by Oracle in Agentic AI foundations, autonomous agent workflows, and enterprise intelligence architecture.",
-    date: "August 2026"
-  },
-  {
-    id: "prompt-builder-hackathon",
-    title: "Prompt Builder 2026 AI Hackathon & Technical Participation",
-    category: "AI Hackathon & Innovation",
-    description: "Awarded technical participation and hackathon certificates by LYNQUP, InnovXus, and LPU School of AI for applied AI prompt engineering.",
-    date: "February 2026"
-  },
-  {
-    id: "iamneo-150hr-programming",
-    title: "150-Hour Computer Programming Coursework Award",
-    category: "Coding & Algorithms",
-    description: "Completed 150 hours of intensive computer programming and problem-solving through iamneo (NIIT Venture) & LPU.",
-    date: "May 2026"
-  },
-  {
-    id: "infosys-python-suite",
-    title: "Infosys Springboard Python & Cybersecurity Certifications",
-    category: "Enterprise Credentials",
-    description: "Earned multi-module certifications across Python Programming (Parts 1 & 2) and Cybersecurity fundamentals.",
-    date: "2026"
-  },
-  {
-    id: "cdp-leadership",
-    title: "Community Development Project (CDP) Python Teaching",
-    category: "Mentorship & Social Impact",
-    description: "Successfully organized and delivered hands-on Python programming workshops for university peers and beginner coders.",
-    date: "July 2026"
-  },
-  {
-    id: "academic-excellence",
-    title: "97.3% Distinction in Higher Secondary Education",
-    category: "Academic Distinction",
-    description: "Ranked among top academic scorers at Narayana Junior College in MPC stream.",
-    date: "2025"
   }
 ];
 
 export const presentationSlides: PresentationSlide[] = [
   {
     id: "intro",
-    title: "Nakka Tanuj Sekhar",
-    subtitle: "B.Tech CSE (AI/ML Specialization) • Technical Project & Skills Walkthrough",
+    title: "NAKKA TANUJ SEKHAR",
+    subtitle: "B.Tech Computer Science and Engineering (AIML) • Lovely Professional University",
     section: "1. Profile Overview",
-    speakerNotes: "Good morning/afternoon professors and fellow classmates. My name is Nakka Tanuj Sekhar, a Computer Science & Engineering (CSE) student with an Artificial Intelligence & Machine Learning (AI/ML) specialization at Lovely Professional University. Today, I am thrilled to present my core engineering projects, technical skill matrix, and interactive live simulations.",
+    speakerNotes: "Good morning/afternoon professors and fellow classmates. My name is Nakka Tanuj Sekhar, studying Computer Science & Engineering (AIML) at Lovely Professional University. Today, I am pleased to present my technical skills, engineering projects, training, and certifications.",
     bulletPoints: [
-      "Main Branch: Computer Science & Engineering (B.Tech CSE)",
-      "Specialization: Artificial Intelligence & Machine Learning (AI/ML)",
-      "Academic Standing: Lovely Professional University (CGPA: 7.47) & 97.3% 12th Board Distinction",
-      "Core Competencies: Embedded IoT Systems, Responsive Web Architecture, AI/ML foundations, and Python Pedagogy",
-      "8 Verified Credentials including Oracle Agentic AI, Infosys Python (Parts 1 & 2), Cybersecurity, and iamneo 150h Programming"
+      "Name: NAKKA TANUJ SEKHAR",
+      "Degree: Bachelor of Technology - Computer Science and Engineering (AIML) at Lovely Professional University (CGPA: 7.47)",
+      "Education Highlights: 97.3% in Higher Secondary Education (Narayana Junior College)",
+      "Technical Core: Python, JavaScript, C, C++, SQL, HTML, CSS, OOP, DBMS",
+      "Tools: MySQL, Arduino IDE, Git, GitHub, VS Code, Microsoft Office"
     ],
     actionLabel: "View Full Resume Summary",
     actionTarget: "#resume"
   },
   {
-    id: "smart-helmet-slide",
-    title: "Project 1: Smart Helmet Accident Detection System",
-    subtitle: "IoT Embedded Safety Solution with Emergency Telemetry Broadcast",
-    section: "2. Flagship IoT Project",
-    speakerNotes: "My first flagship project is an IoT-powered Smart Safety Helmet. Motorcycle accidents frequently result in fatalities because of delayed emergency medical response. I engineered a low-cost, high-reliability embedded system using the ESP8266 microcontroller that detects high-G impacts and sends emergency alerts with location telemetry within 2.5 seconds.",
-    bulletPoints: [
-      "Problem Addressed: 70%+ of two-wheeler fatalities occur due to delayed emergency response during the Golden Hour.",
-      "Sensor Dual-Check: Vibration sensor detects impact forces; IR sensor verifies active helmet wear to reduce false alarms.",
-      "Buzzer Warning Window: 10-second cancel window allows riders to dismiss minor accidental bumps before triggering SOS.",
-      "Telemetry Dispatch: ESP8266 broadcasts GPS coordinates to emergency contacts via webhook/SMS."
-    ],
-    actionLabel: "Launch Live IoT Simulator",
-    actionTarget: "iot-demo"
-  },
-  {
-    id: "smart-helmet-architecture",
-    title: "Smart Helmet: Circuit & Firmware Architecture",
-    subtitle: "Technical Breakdown: Interrupts, Threshold Calibration, and Power Management",
-    section: "2. Flagship IoT Project (Deep Dive)",
-    speakerNotes: "Here is the technical architectural breakdown of the Smart Helmet. On the firmware side, I wrote non-blocking interrupt routines in C++ to instantly capture analog threshold spikes from the SW-420 piezoelectric sensor without polling overhead.",
-    bulletPoints: [
-      "Firmware Stack: C++ on Arduino IDE flashed to ESP8266 NodeMCU.",
-      "Interrupt Service Routine (ISR): Low-latency threshold trigger prevents missed impact spikes.",
-      "Debounce & Calibration: Calibrated sensor thresholds to distinguish between road vibrations and true impacts.",
-      "Fail-safe Mechanism: Audible buzzer feedback loop ensures rider is aware of system status."
-    ],
-    actionLabel: "Inspect IoT Telemetry Demo",
-    actionTarget: "iot-demo"
-  },
-  {
-    id: "agri-platform-slide",
-    title: "Project 2: Agri Platform Website",
-    subtitle: "Centralized Agricultural Knowledge, Advisory, and Resource Hub",
-    section: "3. Web Development Project",
-    speakerNotes: "Moving to my second project, the Agri Platform. Agriculture is the backbone of our economy, yet millions of farmers struggle to access consolidated market rates and disease advisories. I developed a lightweight, responsive web platform designed specifically for rural low-bandwidth conditions.",
-    bulletPoints: [
-      "Problem: Fragmented agricultural info and high latency web portals that fail on rural mobile devices.",
-      "Engineered with semantic HTML5, modular CSS3, and dynamic vanilla JavaScript for ultra-fast load times.",
-      "Features: Real-time Mandi price tickers, crop disease symptom checkers, soil moisture calculators, and government subsidy indexes.",
-      "Responsive Performance: 98/100 performance score ensuring smooth operation on entry-level smartphones."
-    ],
-    actionLabel: "Launch Agri Platform Portal",
-    actionTarget: "agri-demo"
-  },
-  {
     id: "python-teaching-slide",
-    title: "Project 3: Python Programming Teaching (CDP)",
-    subtitle: "Community Development Project — Interactive Pedagogy & Mentorship",
-    section: "4. Education & Community Impact",
-    speakerNotes: "In addition to building software, I believe in empowering others through technical knowledge. Under the LPU Community Development Project, I conducted hands-on Python programming workshops for beginner students, transforming abstract programming theory into practical, interactive coding labs.",
+    title: "Project 1: Python Programming Teaching – CDP",
+    subtitle: "Community Development Project • July 2026",
+    section: "2. Teaching & Mentorship Project",
+    speakerNotes: "My first project is Python Programming Teaching under the Community Development Project (CDP) in July 2026. I taught fundamental Python concepts including variables, data types, operators, conditional statements, loops, and basic programming logic to beginner students.",
     bulletPoints: [
-      "Leadership & Mentorship: Conducted live coding sessions on variables, control flow, loops, and functions.",
-      "Hands-on Approach: Designed 15+ practical coding exercises and step-by-step logic visualizers.",
-      "Student Impact: 100% completion rate among participating students with noticeable improvement in problem-solving confidence.",
-      "Personal Growth: Strengthened my own algorithmic fundamentals, code modularity, and technical communication."
+      "Taught fundamental Python concepts including variables, data types, operators, conditional statements, loops, and basic programming logic.",
+      "Delivered practical coding demonstrations and hands-on exercises to help students understand programming concepts effectively.",
+      "Developed students' foundational programming and problem-solving skills through interactive learning activities.",
+      "Tech Stack: Python, VS Code"
     ],
     actionLabel: "Launch Python Visualizer",
     actionTarget: "python-demo"
   },
   {
-    id: "skills-slide",
-    title: "Technical Skills & Competency Matrix",
-    subtitle: "Languages, Web Stacks, Embedded Hardware, and Databases",
-    section: "5. Technical Competencies",
-    speakerNotes: "This matrix represents my technical toolkit. I have strong foundations in Python and JavaScript for application logic, C/C++ for hardware and algorithms, and MySQL for relational data modeling, supported by modern version control with Git and GitHub.",
+    id: "agri-platform-slide",
+    title: "Project 2: Agri Platform Website",
+    subtitle: "Web Development Project • Feb 2026",
+    section: "3. Web Development Project",
+    speakerNotes: "My second project is the Agri Platform Website developed in February 2026 using HTML, CSS, and JavaScript. It is a web-based agricultural platform designed to provide users with agriculture-related information and digital resources through a centralized interface.",
     bulletPoints: [
-      "Languages: Python (Advanced), JavaScript (ES6+), C, C++, SQL",
-      "Web & Architecture: HTML5 Semantic, CSS3 Responsive, Object-Oriented Programming (OOP), DBMS",
-      "IoT & Systems: ESP8266 NodeMCU, Vibration Sensors, IR Proximity, Arduino IDE, Cybersecurity",
-      "Tools: Git, GitHub, MySQL Workbench, VS Code"
+      "Developed a web-based agricultural platform designed to provide users with agriculture-related information and digital resources through a centralized interface.",
+      "Designed and implemented a user-friendly website interface to organize agricultural content and improve accessibility for users.",
+      "Implemented responsive web pages and interactive components to provide a smooth and engaging user experience.",
+      "Tech Stack: HTML, CSS, JavaScript"
     ],
-    actionLabel: "Explore Interactive Skills Matrix",
+    actionLabel: "Launch Agri Platform Portal",
+    actionTarget: "agri-demo"
+  },
+  {
+    id: "smart-helmet-slide",
+    title: "Project 3: Smart Helmet with Accident Detection & Emergency Alert",
+    subtitle: "IoT & Embedded Safety System • April 2026",
+    section: "4. IoT Safety Project",
+    speakerNotes: "My third project is the Smart Helmet with Accident Detection and Emergency Alert System completed in April 2026. Using an ESP8266 microcontroller with vibration and IR sensors, it detects accident conditions, sounds an audible buzzer, and sends location-based emergency notifications.",
+    bulletPoints: [
+      "Developed a smart safety helmet system for accident and crash detection using sensors and an IoT-enabled microcontroller.",
+      "Integrated vibration and IR sensors to detect potential accident conditions and trigger an emergency alert mechanism.",
+      "Implemented buzzer-based warning and emergency interaction features to improve rider safety during critical situations.",
+      "Enabled location-based emergency notification functionality for sharing the accident location with the concerned person.",
+      "Tech Stack: ESP8266, IR Sensor, Vibration Sensor, Buzzer, IoT"
+    ],
+    actionLabel: "Launch Live IoT Simulator",
+    actionTarget: "iot-demo"
+  },
+  {
+    id: "training-slide",
+    title: "Training: Community Development Project (Python Teaching)",
+    subtitle: "Lovely Professional University • July 2026",
+    section: "5. Structured Training",
+    speakerNotes: "Under structured training at Lovely Professional University in July 2026, I completed comprehensive training in Python programming fundamentals and problem-solving.",
+    bulletPoints: [
+      "Completed structured training in Python programming fundamentals and problem-solving.",
+      "Developed understanding of Python syntax, data types, operators, conditional statements, loops, functions, and basic programming concepts.",
+      "Applied Python concepts through practical coding exercises and programming problems."
+    ],
+    actionLabel: "View Training Details",
+    actionTarget: "#education"
+  },
+  {
+    id: "skills-slide",
+    title: "Skills & Technical Competencies",
+    subtitle: "Languages, Technologies, Databases/Tools, and Soft Skills",
+    section: "6. Skills Matrix",
+    speakerNotes: "Here is my structured skills matrix spanning Languages, Technologies, Databases/Tools, and Soft Skills.",
+    bulletPoints: [
+      "Languages: Python, JavaScript, C, C++, SQL",
+      "Technologies: HTML, CSS, Object-Oriented Programming, DBMS",
+      "Databases/Tools: MySQL, Arduino IDE, Git, GitHub, VS Code, Microsoft Office",
+      "Soft Skills: Problem solving, Team collaboration, Time management, Adaptability, Communication"
+    ],
+    actionLabel: "Explore Skills Section",
     actionTarget: "#skills"
   },
   {
     id: "certs-education-slide",
-    title: "8+ Verified Certifications & Academic Journey",
-    subtitle: "Oracle Agentic AI, Infosys Springboard Suite, iamneo 150h, Narayana 97.3%, and LPU CSE (AI/ML)",
-    section: "6. Credentials & Academic Journey",
-    speakerNotes: "To continually sharpen my engineering skills, I have earned 8 verified certifications spanning Oracle Agentic AI, Infosys Python (Parts 1 & 2), Cybersecurity, iamneo 150-hour programming, and AI hackathons, while maintaining an academic record of 97.3% distinction.",
+    title: "Certificates, Achievements & Education",
+    subtitle: "Oracle, Infosys Springboard, Neo Colab, Hackathon, EduTech Hub",
+    section: "7. Credentials & Academic Journey",
+    speakerNotes: "Here are my verified certifications, achievements, and academic credentials.",
     bulletPoints: [
-      "Oracle University: Agentic AI Certified Foundations Associate (Aug 2026)",
-      "Infosys Springboard: Python Programming (Parts 1 & 2) and Cyber Security (2026)",
-      "iamneo (NIIT Venture): 150-Hour Computer Programming Certification (May 2026)",
-      "AI Hackathons: Prompt Builder 2026 (LYNQUP & InnovXus / School of AI)",
-      "Education: B.Tech CSE (AI/ML Specialization) at LPU (7.47 CGPA) | Narayana Junior College (97.3% Distinction)"
+      "Certificates: Oracle Agentic AI, Infosys Springboard Python, Neo Colab Computer Programming, AI Prompt Builder Hackathon (6-Hour), EduTech Hub Leadership",
+      "Achievements: Technical project at LPU in ECE249; Completed Infosys Springboard cert; Practical exposure to AI prompting & generative AI",
+      "Education: Lovely Professional University (B.Tech CSE AIML, CGPA: 7.47) | Narayana Junior College (97.3%) | DAV HZL (72.7%)"
     ],
-    actionLabel: "View Certificates & Timeline",
-    actionTarget: "#certificates"
+    actionLabel: "View Full Resume",
+    actionTarget: "#resume"
   },
   {
     id: "conclusion-qa",
     title: "Summary & Open for Questions",
-    subtitle: "Thank You for Your Time & Attention",
-    section: "7. Q&A and Collaboration",
-    speakerNotes: "In summary, my engineering philosophy centers on applying AI, ML, and embedded systems to solve real-world problems. I am now happy to take any questions or demonstrate the live project simulators!",
+    subtitle: "Thank You for Your Time & Consideration",
+    section: "8. Q&A and Contact",
+    speakerNotes: "Thank you for your time. I am open to answering any questions regarding my projects, training, and technical background.",
     bulletPoints: [
-      "Available for AI/ML engineering, internships, and technical collaboration.",
-      "Email: tanujsekhar18@gmail.com | Phone: +91-9784668230",
+      "Name: NAKKA TANUJ SEKHAR",
+      "Email: tanujsekhar18@gmail.com | Mobile: +91-9784668230",
       "LinkedIn: linkedin.com/in/tanuj-sekhar-nakka-61608037a",
-      "GitHub: github.com/tanujsekhar1830"
+      "GitHub: https://github.com/tanujsekhar1830"
     ],
     actionLabel: "Back to Portfolio Dashboard",
     actionTarget: "exit"

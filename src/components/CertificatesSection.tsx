@@ -71,7 +71,7 @@ export const CertificatesSection: React.FC = () => {
             Certifications & Technical Accreditations
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            8 verified credentials validating specialized competencies across Oracle Agentic AI, Infosys Python Programming suites, Cybersecurity, and Hackathons.
+            Verified credentials validating competencies across Oracle Agentic AI, Infosys Springboard Python, Neo Colab, and AI Hackathons.
           </p>
         </div>
 
